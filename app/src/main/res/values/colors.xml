@@ -2,9 +2,10 @@
 <resources>
     <color name="vert_fond">#ABCAB1</color>
     <color name="vert_titre">#1F3A1E</color>
-    <color name="vert_rond1">#ADD1B4</color>
-    <color name="vert_rond5">#93AD93</color>
+    <color name="vert2">#ADD1B4</color>
+    <color name="vert5">#93AD93</color>
     <color name="blanc_fond">#FFFFFF</color>
+    <color name="vert1">#ADD1B4</color>
     <color name="gris_input">#DCDCDC</color>
     <color name="noir">#000000</color>
     <color name="BoutonNext">#789877</color>

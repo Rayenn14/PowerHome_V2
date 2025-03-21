@@ -43,7 +43,7 @@
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/vert_rond1"
+        android:background="@color/vert2"
         android:src="@drawable/retour"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"/>

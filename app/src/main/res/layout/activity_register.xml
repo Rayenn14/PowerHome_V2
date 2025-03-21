@@ -6,26 +6,23 @@
     android:id="@+id/register">
 
 
-    <ImageView
-        android:id="@+id/rond5"
-        android:layout_width="700dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="38dp"
-        android:src="@drawable/rond5" />
 
 
-    <LinearLayout
-        android:layout_width="70dp"
-        android:layout_height="220dp"
-        android:layout_marginLeft="-10dp"
-        android:background="@drawable/round_corner2"
-        android:layout_marginTop="-15dp"
-        />
+
+    <View
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:background="@drawable/circle"
+        android:layout_gravity="left"
+        android:translationX="-35dp"
+        android:layout_marginTop="-700dp"
+        android:backgroundTint="@color/vert5"
+        android:translationY="535dp"/>
 
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/vert_rond5"
+        android:background="@color/vert5"
         android:src="@drawable/retour"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"/>
@@ -41,12 +38,14 @@
         android:layout_marginTop="45dp"/>
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/rond6"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="585dp" />
+    <View
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:background="@drawable/circle"
+        android:layout_gravity="left"
+        android:translationX="230dp"
+        android:translationY="600dp"
+        android:backgroundTint="@color/vert1"/>
 
     <LinearLayout
         android:layout_width="100dp"

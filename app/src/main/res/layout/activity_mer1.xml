@@ -1,7 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/vert_rond5">
+    android:background="@color/vert5"
+    android:id="@+id/mer1">
 
     <!-- Cercle en arrière-plan qui dépasse -->
     <View
