@@ -1,0 +1,104 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vert_rond5">
+
+    <!-- Cercle en arrière-plan qui dépasse -->
+    <View
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:background="@drawable/circle"
+        android:layout_gravity="bottom"
+        android:translationY="230dp"/>
+
+
+    <View
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:background="@drawable/circle"
+        android:layout_gravity="left"
+        android:translationX="-230dp"
+        android:translationY="540dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:text="Bonjour !"
+            android:textColor="@color/blanc_fond"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="70dp"/>
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="138dp"
+            android:src="@drawable/powerhome_logo"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="120dp"/>
+
+        <LinearLayout
+            android:layout_width="306dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner">
+
+            <TextView
+                android:id="@+id/ajouterEquipement"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Ajouter un équiement"
+                android:textColor="@color/noir"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="13dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="306dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner">
+
+            <TextView
+                android:id="@+id/ajouterReservation"
+                android:layout_width="270dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Ajouter une réservation"
+                android:textColor="@color/noir"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="13dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="550dp"
+            android:src="@drawable/rond4" />
+
+        <ImageButton
+            android:id="@+id/BoutonNext"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="297dp"
+            android:layout_marginTop="567dp"
+            android:background="@color/BoutonNext"
+            android:src="@drawable/fleche" />
+
+    </RelativeLayout>
+
+</FrameLayout>
