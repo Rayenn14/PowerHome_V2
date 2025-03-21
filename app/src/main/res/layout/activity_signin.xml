@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc_fond"
+    android:id="@+id/signin">
+
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="330dp"
+        android:layout_marginLeft="300dp"
+        android:id="@+id/rond3"
+        android:src="@drawable/rond3" />
+
+    <ImageView
+        android:id="@+id/rond2"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="-150dp"
+        android:src="@drawable/rond2" />
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="-85dp"
+        android:src="@drawable/rond1"
+        android:id="@+id/rond1"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="90dp"
+        android:text="Bienvenue !"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:textColor="@color/blanc_fond"
+        android:id="@+id/bienvenue"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signinform"
+        android:gravity="center">
+
+        <EditText
+            android:layout_width="303dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="340dp"
+            android:text="Email"
+            android:paddingStart="20dp"
+            android:textColor="@color/noir"
+            android:background="@drawable/round_corner"
+            android:id="@+id/email"/>
+
+        <EditText
+            android:layout_width="303dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="420dp"
+            android:text="Mot de passe"
+            android:paddingStart="20dp"
+            android:textColor="@color/noir"
+            android:background="@drawable/round_corner"
+            android:id="@+id/mdp"/>
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/rond4"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="245dp"/>
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:src="@drawable/fleche"
+            android:background="@color/BoutonNext"
+            android:id="@+id/BoutonNext"
+            android:layout_marginTop="517dp"
+            android:layout_marginLeft="252dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="121dp"
+        android:layout_height="9dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginLeft="26dp"
+        android:background="@color/jaune"/>
+
+    <TextView
+        android:layout_width="121dp"
+        android:layout_height="20dp"
+        android:text="Créer un compte"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="665dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/Creeruncompteclick"/>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="9dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginLeft="220dp"
+        android:background="@color/marron"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:text="Mot de passe oublié"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="668dp"
+        android:layout_marginLeft="225dp"
+        android:id="@+id/Mdpoublieeclick"/>
+
+    <!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/nuages"-->
+<!--        android:layout_marginBottom="30dp"-->
+<!--        android:gravity="center">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_marginLeft="35dp"-->
+<!--            android:id="@+id/powerhome_logo"-->
+<!--            android:src="@drawable/powerhome_logo" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/app_name"-->
+<!--            android:textSize="50sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/vert_titre"-->
+<!--            android:layout_below="@id/powerhome_logo"/>-->
+
+<!--    </RelativeLayout>-->
+
+
+
+</RelativeLayout>

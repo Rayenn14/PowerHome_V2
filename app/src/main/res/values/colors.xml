@@ -2,4 +2,10 @@
 <resources>
     <color name="vert_fond">#ABCAB1</color>
     <color name="vert_titre">#1F3A1E</color>
+    <color name="blanc_fond">#FFFFFF</color>
+    <color name="gris_input">#DCDCDC</color>
+    <color name="noir">#000000</color>
+    <color name="BoutonNext">#789877</color>
+    <color name="jaune">#FDF062</color>
+    <color name="marron">#AC9171</color>
 </resources>
