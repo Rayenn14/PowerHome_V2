@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc_fond"
+    android:id="@+id/nv_MotDePasse">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="30dp">
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:text="Nouveau mot de passe"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="-260dp"
+            android:layout_marginTop="30dp"
+            android:text="Entrez votre e-mail enregistré ci-dessous"
+            android:textColor="@color/gris_basic"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="30dp">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:text="Nouveau mot de passe"
+        android:textColor="@color/gris_basic"/>
+
+    <EditText
+        android:id="@+id/inputNewMdp"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="-150dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/edittext_border"
+        android:text="**** **** ****"
+        android:textSize="15sp"
+        android:paddingStart="19dp"
+        android:textColor="#626161"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="280dp">
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:text="Confirmation"
+            android:textColor="@color/gris_basic"/>
+
+        <EditText
+            android:id="@+id/inputConfirmationNewMdp"
+            android:layout_width="350dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="-150dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edittext_border"
+            android:text="**** **** ****"
+            android:textSize="15sp"
+            android:paddingStart="19dp"
+            android:textColor="#626161"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="193dp"
+        android:src="@drawable/deco2"
+        android:layout_marginTop="390dp"
+        android:layout_marginLeft="60dp"/>
+
+    <Button
+        android:id="@+id/btnValider"
+        android:layout_width="256dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#458244"
+        android:layout_marginTop="615dp"
+        android:layout_marginLeft="75dp"
+        android:text="Valider"
+        android:textSize="20sp"
+        />
+
+</RelativeLayout>
