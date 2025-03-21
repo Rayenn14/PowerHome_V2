@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc_fond"
+    android:id="@+id/register">
+
+
+    <ImageView
+        android:id="@+id/rond5"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:src="@drawable/rond5" />
+
+
+    <LinearLayout
+        android:layout_width="70dp"
+        android:layout_height="220dp"
+        android:layout_marginLeft="-10dp"
+        android:background="@drawable/round_corner2"
+        android:layout_marginTop="-15dp"
+        />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/vert_rond5"
+        android:src="@drawable/retour"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:text="Créer un compte"
+        android:textSize="50dp"
+        android:textColor="@color/blanc_fond"
+        android:textStyle="bold"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="45dp"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/rond6"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="585dp" />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="9dp"
+        android:background="@color/jaune"
+        android:layout_marginTop="688dp"
+        android:layout_marginLeft="292dp"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="Se connecter"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="676dp"
+        android:layout_marginLeft="298dp"
+        android:id="@+id/Seconnecterclick"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/registerform"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/nomregister"
+            android:layout_width="303dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner"
+            android:paddingStart="20dp"
+            android:text="Nom"
+            android:textColor="@color/noir" />
+
+        <EditText
+            android:id="@+id/prenomegister"
+            android:layout_width="303dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner"
+            android:paddingStart="20dp"
+            android:text="Prénom"
+            android:textColor="@color/noir" />
+
+        <EditText
+            android:id="@+id/etageegister"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner"
+            android:paddingStart="20dp"
+            android:text="Etage"
+            android:textColor="@color/noir" />
+
+        <EditText
+            android:id="@+id/superfaceegister"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="200dp"
+            android:background="@drawable/round_corner"
+            android:paddingStart="20dp"
+            android:text="Superface"
+            android:textColor="@color/noir" />
+
+        <EditText
+            android:id="@+id/emailegister"
+            android:layout_width="303dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner"
+            android:paddingStart="20dp"
+            android:text="Email"
+            android:textColor="@color/noir" />
+
+        <EditText
+            android:id="@+id/mdpregister"
+            android:layout_width="303dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="420dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/round_corner"
+            android:paddingStart="20dp"
+            android:text="Mot de passe"
+            android:textColor="@color/noir" />
+
+
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="500dp"
+            android:src="@drawable/rond4" />
+
+        <ImageButton
+            android:id="@+id/BoutonNext"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="297dp"
+            android:layout_marginTop="517dp"
+            android:background="@color/BoutonNext"
+            android:src="@drawable/fleche" />
+
+        <TextView
+            android:layout_width="125dp"
+            android:layout_height="55dp"
+            android:text="Créer"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:textColor="@color/noir"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="70dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
