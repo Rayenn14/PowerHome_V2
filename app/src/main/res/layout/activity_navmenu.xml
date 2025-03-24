@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="200dp"
+            >
+
+            <!-- En-tête -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Imageprofil -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/profil"
+                    android:layout_gravity="center"/>
+
+                <!-- Nom et étage -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sophia Rose"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Étage : 2"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <!-- BONTONNNNNNNN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/nav_home"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+                <TextView
+                    android:id="@+id/nav_bell"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+                <TextView
+                    android:id="@+id/nav_bookmark"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+                <TextView
+                    android:id="@+id/nav_user"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/nav_home"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text=" Liste des habitats"-->
+<!--                    android:drawableStart="@drawable/home"/>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/nav_bell"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Notifications"-->
+<!--                    android:drawableStart="@drawable/bell"/>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/nav_bookmark"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Mes préférences"-->
+<!--                    android:drawableStart="@drawable/bookmark"/>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/nav_user"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Mon Habitat"-->
+<!--                    android:drawableStart="@drawable/user"/>-->
+            </LinearLayout>
+
+        </LinearLayout>
+</RelativeLayout>
