@@ -4,7 +4,6 @@
     android:background="@color/vert5"
     android:id="@+id/mer1">
 
-    <!-- Cercle en arrière-plan qui dépasse -->
     <View
         android:layout_width="400dp"
         android:layout_height="350dp"
