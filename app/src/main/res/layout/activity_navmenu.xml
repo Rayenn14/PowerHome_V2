@@ -7,40 +7,6 @@
     android:background="@color/vert_eau"
     >
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="220dp"
-        android:src="@drawable/home"
-        >
-
-    </ImageView>
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="260dp"
-        android:src="@drawable/bell">
-
-    </ImageView>
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="300dp"
-        android:src="@drawable/bookmark">
-
-    </ImageView>
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="335dp"
-        android:src="@drawable/user">
-
-    </ImageView>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -54,11 +20,6 @@
             android:orientation="vertical"
             android:background="@color/blanc_fond"
             >
-
-
-
-
-
 
                 <!-- Imageprofil -->
                 <LinearLayout
@@ -94,57 +55,106 @@
                     />
 
 
-            <!-- BONTONNNNNNNN -->
             <LinearLayout
-                android:layout_width="140dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="55dp"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical"
                 android:paddingTop="30dp">
 
+                <!-- Liste des habitats -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/nav_home"
-                    android:layout_width="140dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:text="Liste des habitats" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/home"
+                        android:layout_marginRight="10dp"/>
 
-                <TextView
-                    android:id="@+id/nav_bell"
-                    android:layout_width="140dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:text="Notifications" />
+                    <TextView
+                        android:id="@+id/nav_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Liste des habitats" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/nav_bookmark"
-                    android:layout_width="140dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:text="Mes préferences"
+                <!-- Notifications -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
-                    />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/bell"
+                        android:layout_marginRight="10dp"/>
 
-                <TextView
-                    android:id="@+id/nav_user"
-                    android:layout_width="140dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:text="Mon Habitat"
+                    <TextView
+                        android:id="@+id/nav_bell"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Notifications" />
+                </LinearLayout>
 
-                    />
+                <!-- Mes préférences -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/bookmark"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:id="@+id/nav_bookmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Mes préférences" />
+                </LinearLayout>
+
+                <!-- Mon Habitat -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/user"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:id="@+id/nav_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Mon Habitat" />
+                </LinearLayout>
+
+            </LinearLayout>
 
 
-                <!--                <Button-->
+
+            <!--                <Button-->
                 <!--                    android:id="@+id/nav_home"-->
                 <!--                    android:layout_width="match_parent"-->
                 <!--                    android:layout_height="wrap_content"-->
@@ -172,9 +182,5 @@
                 <!--                    android:text="Mon Habitat"-->
                 <!--                    android:drawableStart="@drawable/user"/>-->
             </LinearLayout>
-
         </LinearLayout>
-    </LinearLayout>
-
-
 </RelativeLayout>
