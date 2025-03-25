@@ -15,12 +15,12 @@ public class ElectromenagerActivity extends AppCompatActivity {
 
 
 
-        ImageView addEquip = findViewById(R.id.addEquipement);
-
-        addEquip.setOnClickListener(v -> {
-            Intent intent = new Intent(ElectromenagerActivity.this, SigninActivity.class);
-            startActivity(intent);
-        });
+//        ImageView addEquip = findViewById(R.id.addEquipement);
+//
+//        addEquip.setOnClickListener(v -> {
+//            Intent intent = new Intent(ElectromenagerActivity.this, SigninActivity.class);
+//            startActivity(intent);
+//        });
 
     }
 }
