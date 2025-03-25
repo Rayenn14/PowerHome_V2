@@ -135,4 +135,5 @@
         android:layout_height="60dp"
         android:layout_marginTop="5dp"
         android:src="@drawable/plus"
+        android:id="@+id/addEquipement"/>
 </LinearLayout>

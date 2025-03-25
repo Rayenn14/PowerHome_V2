@@ -8,6 +8,13 @@
     android:padding="20dp">
 
 
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="250dp"
+        android:src="@drawable/image"
+
+        android:layout_marginTop="-30dp"/>
+
     <LinearLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -52,7 +59,6 @@
 
         >
 
-        <
 
 
         <TextView
@@ -83,7 +89,7 @@
             android:textStyle="bold"
             android:layout_marginLeft="50dp" />
 
-        <
+
 
         <TextView
             android:layout_width="55dp"
