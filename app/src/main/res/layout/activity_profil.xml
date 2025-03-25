@@ -2,42 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFAFA"
     android:gravity="center"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:orientation="vertical">
 
 
-<!--    <ImageView-->
-<!--        android:layout_width="410dp"-->
-<!--        android:layout_height="250dp"-->
-<!--        android:src="@drawable/image"-->
-
-<!--        android:layout_marginTop="-30dp"/>-->
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="200dp"
+        android:src="@drawable/image"
+        android:layout_marginTop="-45dp"/>
 
     <LinearLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginLeft="-5dp"
         android:gravity="center"
         android:background="@drawable/radius_img">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:src="@drawable/profil"
             android:scaleType="centerCrop"
             android:background="@drawable/radius_img"
             android:clipToOutline="true"/>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/prenom_personne"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="45dp"
+        android:text="Prénom"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/nom_personne"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="-30dp"
+        android:text="Nom"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:elevation="2dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp">
 
         <ImageView
             android:layout_width="30dp"
@@ -49,24 +65,25 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/nb_"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             android:layout_marginLeft="-35dp"
-            android:text="Bonus"
+            android:text="nb"
+            android:paddingStart="15dp"
             android:textSize="18sp"
             android:textStyle="bold" />
 
 
-
-
-
         <TextView
+            android:id="@+id/nb_malus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="9dp"
-            android:text="67"
+            android:text="nb"
+            android:paddingStart="8dp"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -81,10 +98,12 @@
 
 
         <TextView
+            android:id="@+id/nb_total"
+            android:paddingStart="8dp"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:text="bla"
+            android:text="nb"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginLeft="50dp" />
@@ -105,37 +124,44 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:layout_height="375dp"
         android:elevation="2dp"
         android:orientation="vertical"
         android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="Name"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:layout_width="358dp"
-            android:layout_height="40dp"
+            android:id="@+id/id_name"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
             android:background="@drawable/edittext_border"
             android:paddingStart="16dp" />
 
         <TextView
-            android:layout_width="match_parent"
+
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="-52dp"
+            android:layout_marginBottom="3dp"
             android:text="Prenom"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:id="@+id/id_prenom"
+            android:layout_width="170dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="-5dp"
             android:background="@drawable/edittext_border"
             android:paddingStart="16dp" />
 
@@ -148,6 +174,7 @@
             android:textStyle="bold" />
 
         <Spinner
+            android:id="@+id/spinner_etage"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/edittext_border"
@@ -162,6 +189,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/superficie"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/edittext_border"
@@ -176,6 +204,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/edittext_border"
@@ -190,6 +219,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/mdp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/edittext_border"
@@ -197,4 +227,13 @@
             android:paddingStart="16dp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSauvergarderEdit"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/vert_fonce"
+        android:text="Sauvergarder"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
 </LinearLayout>
