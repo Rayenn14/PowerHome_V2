@@ -13,14 +13,6 @@ public class SigninActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-
-        ImageButton goBackTo = findViewById(R.id.RetourSplash);
-
-        goBackTo.setOnClickListener(v -> {
-            Intent intent = new Intent(SigninActivity.this, SplashActivity.class);
-            startActivity(intent);
-        });
-
         TextView creerCompte = findViewById(R.id.Creeruncompteclick);
 
         creerCompte.setOnClickListener(v -> {
@@ -34,5 +26,13 @@ public class SigninActivity extends AppCompatActivity {
             Intent intent = new Intent(SigninActivity.this, ForgetpwdActivity.class);
             startActivity(intent);
         });
+
+        ImageButton goBackTo = findViewById(R.id.RetourSplash);
+
+        goBackTo.setOnClickListener(v -> {
+            Intent intent = new Intent(SigninActivity.this, SplashActivity.class);
+            startActivity(intent);
+        });
+
     }
 }
