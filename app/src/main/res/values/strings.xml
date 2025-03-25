@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PowerHome</string>
+    <string name="liste_habitats">Liste des habitats</string>
+    <string name="notifications">Notifications</string>
+    <string name="mes_preferences">Mes préférences</string>
+    <string name="mon_habitat">Mon Habitat</string>
 </resources>
