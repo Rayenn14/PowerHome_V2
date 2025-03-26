@@ -1,6 +1,8 @@
 package com.example.powerhome_v2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,13 @@ public class ResidentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_residents);
+
+        ImageButton goToHamburger = findViewById(R.id.menuHamburger);
+
+        goToHamburger.setOnClickListener(v -> {
+            Intent intent = new Intent(ResidentActivity.this, NavMenuActivity.class);
+            startActivity(intent);
+        });
 
         ListView lv = findViewById(R.id.listView);
 

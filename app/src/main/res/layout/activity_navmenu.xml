@@ -6,11 +6,15 @@
     android:background="@color/vert_eau"
     >
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,6 +23,17 @@
             android:orientation="vertical"
             android:background="@color/blanc_fond"
             >
+
+            <!-- Menu Hamburger -->
+            <ImageButton
+                android:layout_marginLeft="5dp"
+                android:id="@+id/menuHamburger"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/Hamburger2"
+                android:scaleType="fitCenter"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/blanc_fond"/>
 
                 <!-- Imageprofil -->
                 <LinearLayout
@@ -45,6 +60,7 @@
                     android:textSize="18sp" />
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="28dp"
@@ -90,19 +106,20 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/bell"
-                        android:layout_marginRight="10dp"/>
+<!--                    VOIR SI ON FAIT OU PAS LES NOTIFS-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:src="@drawable/bell"-->
+<!--                        android:layout_marginRight="10dp"/>-->
 
-                    <TextView
-                        android:id="@+id/nav_bell"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Notifications" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/nav_bell"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:clickable="true"-->
+<!--                        android:focusable="true"-->
+<!--                        android:text="Notifications" />-->
                 </LinearLayout>
 
                 <!-- Mes préférences -->
@@ -124,7 +141,7 @@
                         android:layout_height="30dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Mes préférences" />
+                        android:text="Mes équipements" />
                 </LinearLayout>
 
                 <!-- Mon Habitat -->
@@ -146,7 +163,7 @@
                         android:layout_height="30dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Mon Habitat" />
+                        android:text="Mon habitat" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -171,6 +188,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 </RelativeLayout>

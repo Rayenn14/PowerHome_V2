@@ -8,11 +8,21 @@
     android:background="@color/vert5"
     android:padding="16dp">
 
+    <ImageButton
+        android:layout_marginLeft="5dp"
+        android:id="@+id/menuHamburger"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/Hamburger2"
+        android:scaleType="fitCenter"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/vert5"/>
+
     <!-- Conteneur principal -->
     <LinearLayout
         android:layout_width="344dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:layout_marginLeft="20dp">
 
