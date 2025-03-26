@@ -180,6 +180,7 @@
             android:background="@drawable/edittext_border"
             android:paddingStart="16dp"
             android:entries="@array/etage"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
