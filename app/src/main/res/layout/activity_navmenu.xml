@@ -106,19 +106,20 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/bell"
-                        android:layout_marginRight="10dp"/>
+<!--                    VOIR SI ON FAIT OU PAS LES NOTIFS-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:src="@drawable/bell"-->
+<!--                        android:layout_marginRight="10dp"/>-->
 
-                    <TextView
-                        android:id="@+id/nav_bell"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Notifications" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/nav_bell"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:clickable="true"-->
+<!--                        android:focusable="true"-->
+<!--                        android:text="Notifications" />-->
                 </LinearLayout>
 
                 <!-- Mes préférences -->
@@ -140,7 +141,7 @@
                         android:layout_height="30dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Mes préférences" />
+                        android:text="Mes équipements" />
                 </LinearLayout>
 
                 <!-- Mon Habitat -->
@@ -162,7 +163,7 @@
                         android:layout_height="30dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Mon Habitat" />
+                        android:text="Mon habitat" />
                 </LinearLayout>
 
                 <LinearLayout
