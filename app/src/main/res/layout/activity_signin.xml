@@ -63,7 +63,7 @@
             android:layout_marginTop="340dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Email"
+            android:hint="Email"
             android:textColor="@color/noir" />
 
         <EditText
@@ -73,7 +73,7 @@
             android:layout_marginTop="420dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Mot de passe"
+            android:hint="Mot de passe"
             android:textColor="@color/noir" />
 
         <ImageView
