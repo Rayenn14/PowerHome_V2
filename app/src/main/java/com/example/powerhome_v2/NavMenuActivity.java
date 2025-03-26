@@ -2,14 +2,9 @@ package com.example.powerhome_v2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.powerhome_v2.R;
-import com.example.powerhome_v2.SigninActivity;
 
 public class NavMenuActivity extends AppCompatActivity {
     @Override
@@ -17,44 +12,39 @@ public class NavMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navmenu);
 
+        // Redirection vers ProfilActivity
         TextView editerProfil = findViewById(R.id.nav_editprofile);
-
         editerProfil.setOnClickListener(v -> {
             Intent intent = new Intent(NavMenuActivity.this, ProfilActivity.class);
             startActivity(intent);
         });
 
-        TextView goBackToNotif = findViewById(R.id.nav_bell);
+        // Redirection vers Notifications (à compléter)
+        // TextView goBackToNotif = findViewById(R.id.nav_bell);
+        // goBackToNotif.setOnClickListener(v -> {
+        // Intent intent = new Intent(NavMenuActivity.this, NotificationActivity.class);
+        // startActivity(intent);
+        // });
 
-        // FAIRE CENTRE DE NOTIF !!!!!!!!!!!!!!!
-
-        editerProfil.setOnClickListener(v -> {
-            Intent intent = new Intent(NavMenuActivity.this, ProfilActivity.class); // CE NEST PAS ProfilActivity.class, il faut rediriger vers un centre de notifs
-            startActivity(intent);
-        });
-
+        // Redirection vers Mes Préférences
         TextView goBackToPreferences = findViewById(R.id.nav_bookmark);
-
-        // FAIRE CENTRE DE PREFERENCES
-
         goBackToPreferences.setOnClickListener(v -> {
-            Intent intent = new Intent(NavMenuActivity.this, ProfilActivity.class); // CE NEST PAS ProfilActivity.class, il faut rediriger vers un centre de preference
+            Intent intent = new Intent(NavMenuActivity.this, ResidentActivity.class); // Remplacer par l'activité correcte
             startActivity(intent);
         });
 
+        // Redirection vers Liste des habitants
         TextView goBackToListeHabitants = findViewById(R.id.nav_home);
-
         goBackToListeHabitants.setOnClickListener(v -> {
             Intent intent = new Intent(NavMenuActivity.this, ResidentActivity.class);
             startActivity(intent);
         });
 
+        // Redirection vers Mon Habitat
         TextView goBackToMyAccount = findViewById(R.id.nav_user);
-
-        editerProfil.setOnClickListener(v -> {
-            Intent intent = new Intent(NavMenuActivity.this, ElectromenagerActivity.class);
+        goBackToMyAccount.setOnClickListener(v -> {
+            Intent intent = new Intent(NavMenuActivity.this, ResidentActivity.class); // Remplacer par l'activité correcte
             startActivity(intent);
         });
-
     }
 }

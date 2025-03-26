@@ -29,7 +29,7 @@
                 android:layout_marginLeft="5dp"
                 android:id="@+id/menuHamburger"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/Hamburger2"
+                android:src="@drawable/hamburger2"
                 android:scaleType="fitCenter"
                 android:layout_width="35dp"
                 android:layout_height="35dp"

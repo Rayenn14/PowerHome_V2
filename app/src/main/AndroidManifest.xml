@@ -36,6 +36,7 @@
         <activity android:name=".ResidentActivity" android:exported="false"/>
         <activity android:name=".ValidationActivity" android:exported="false"/>
         <activity android:name=".ElectromenagerActivity" android:exported="false"/>
+        <activity android:name=".NavMenuActivity" android:exported="false"/>
 
     </application>
 
