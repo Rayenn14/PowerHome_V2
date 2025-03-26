@@ -15,6 +15,13 @@ public class ElectromenagerActivity extends AppCompatActivity {
 
 
 
+        ImageButton goToHamburger = findViewById(R.id.menuHamburger);
+
+        goToHamburger.setOnClickListener(v -> {
+            Intent intent = new Intent(ElectromenagerActivity.this, NavMenuActivity.class);
+            startActivity(intent);
+        });
+
 //        ImageView addEquip = findViewById(R.id.addEquipement);
 //
 //        addEquip.setOnClickListener(v -> {

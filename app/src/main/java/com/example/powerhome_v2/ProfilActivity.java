@@ -17,6 +17,13 @@ public class ProfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
 
+        ImageButton goToHamburger = findViewById(R.id.menuHamburger);
+
+        goToHamburger.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfilActivity.this, NavMenuActivity.class);
+            startActivity(intent);
+        });
+
 
     }
 }
