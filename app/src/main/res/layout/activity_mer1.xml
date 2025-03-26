@@ -24,6 +24,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageButton
+            android:layout_marginLeft="15dp"
+            android:id="@+id/menuHamburger"
+            android:layout_marginTop="25dp"
+            android:background="@color/vert5"
+            android:layout_gravity="start"
+            android:src="@drawable/Hamburger2"
+            android:scaleType="fitCenter"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            />
+
         <TextView
             android:layout_width="250dp"
             android:layout_height="80dp"

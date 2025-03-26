@@ -73,6 +73,7 @@
             android:layout_marginTop="420dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
+            android:inputType="textPassword"
             android:text="Mot de passe"
             android:textColor="@color/noir" />
 
