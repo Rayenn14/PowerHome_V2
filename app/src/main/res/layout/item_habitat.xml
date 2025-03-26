@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/blanc_casse"
+    android:padding="12dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:radius="15dp"
+    android:shadowColor="#BDBDBD"
+    >
+
+    <!-- ID -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/nom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:text="Nom du résident"
+            android:textColor="@color/vert_fonce"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ETAGE"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/noir" />
+
+            <TextView
+                android:id="@+id/etage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/blanc_fond"
+                android:background="@color/vert1"
+                android:padding="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Nom -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:id="@+id/num"
+            android:text="NumEquipement"
+            android:textColor="@color/vert_fonce"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/icon_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:padding="4dp" />
+</LinearLayout>
