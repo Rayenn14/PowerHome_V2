@@ -10,7 +10,7 @@
         android:layout_width="410dp"
         android:layout_height="200dp"
         android:src="@drawable/image"
-        android:layout_marginTop="-45dp"/>
+        android:layout_marginTop="-70dp"/>
 
     <LinearLayout
         android:layout_width="100dp"
@@ -165,36 +165,65 @@
             android:background="@drawable/edittext_border"
             android:paddingStart="16dp" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:text="Etage"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:gravity="center">
 
-        <Spinner
-            android:id="@+id/spinner_etage"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_border"
-            android:paddingStart="16dp"
-            android:entries="@array/etage"/>
+            <!-- Etage Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Superficie"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <!-- "Etage" Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Etage"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
-        <EditText
-            android:id="@+id/superficie"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_border"
-            android:paddingStart="16dp" />
+                <!-- Spinner for "Etage" -->
+                <Spinner
+                    android:id="@+id/spinner_etage"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext_border"
+                    android:paddingStart="16dp"
+                    android:entries="@array/etage"/>
+            </LinearLayout>
+
+            <!-- Superficie Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- "Superficie" Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Superficie"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <!-- EditText for "Superficie" -->
+                <EditText
+                    android:id="@+id/superficie"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext_border"
+                    android:paddingStart="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
