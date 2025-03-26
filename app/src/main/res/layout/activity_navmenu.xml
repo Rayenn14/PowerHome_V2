@@ -1,194 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/vert_eau"
-    >
+    android:background="@color/vert_eau">
 
-
-
+    <!-- Contenu principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
+        <!-- Menu hamburger pour ouvrir le drawer -->
+        <ImageButton
+            android:id="@+id/menuHamburger"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/hamburger2"
+            android:scaleType="fitCenter"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/vert_eau"/>
 
-
-        <LinearLayout
+        <!-- Contenu de l'activité principale -->
+        <FrameLayout
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="200dp"
-            android:orientation="vertical"
-            android:background="@color/blanc_fond"
-            >
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
-            <!-- Menu Hamburger -->
-            <ImageButton
-                android:layout_marginLeft="5dp"
-                android:id="@+id/menuHamburger"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/hamburger2"
-                android:scaleType="fitCenter"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@color/blanc_fond"/>
+    <!-- Menu latéral -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/blanc_fond"
+        app:menu="@menu/menu_navigation"
+        app:headerLayout="@layout/nav_header"/>
 
-                <!-- Imageprofil -->
-                <LinearLayout
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:gravity="center"
-                    android:background="@drawable/radius_img">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/profil"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/radius_img"
-                        android:clipToOutline="true"/>
-                </LinearLayout>
-
-                <!-- Nom et étage -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="28dp"
-                    android:text="Sophia Rose"
-                    android:textSize="18sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="28dp"
-                    android:text="Étage : 2"
-                    android:textSize="14sp"
-                    android:textColor="@color/gris_basic"
-                    />
-
-
-            <LinearLayout
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:orientation="vertical"
-                android:paddingTop="30dp">
-
-                <!-- Liste des habitats -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/home"
-                        android:layout_marginRight="10dp"/>
-
-                    <TextView
-                        android:id="@+id/nav_home"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Liste des habitats" />
-                </LinearLayout>
-
-                <!-- Notifications -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-<!--                    VOIR SI ON FAIT OU PAS LES NOTIFS-->
-<!--                    <ImageView-->
-<!--                        android:layout_width="20dp"-->
-<!--                        android:layout_height="20dp"-->
-<!--                        android:src="@drawable/bell"-->
-<!--                        android:layout_marginRight="10dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/nav_bell"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="30dp"-->
-<!--                        android:clickable="true"-->
-<!--                        android:focusable="true"-->
-<!--                        android:text="Notifications" />-->
-                </LinearLayout>
-
-                <!-- Mes préférences -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/bookmark"
-                        android:layout_marginRight="10dp"/>
-
-                    <TextView
-                        android:id="@+id/nav_bookmark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Mes équipements" />
-                </LinearLayout>
-
-                <!-- Mon Habitat -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/user"
-                        android:layout_marginRight="10dp"/>
-
-                    <TextView
-                        android:id="@+id/nav_user"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Mon habitat" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/settings"
-                        android:layout_marginRight="10dp"/>
-
-                    <TextView
-                        android:id="@+id/nav_editprofile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Editer mon profil" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

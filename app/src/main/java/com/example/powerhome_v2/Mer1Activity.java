@@ -15,11 +15,5 @@ public class Mer1Activity extends AppCompatActivity {
 
 //        faire les raccords ajouterEquipement et ajouter Reservation quand les xml dispo
 
-        ImageButton goToHamburger = findViewById(R.id.menuHamburger);
-
-        goToHamburger.setOnClickListener(v -> {
-            Intent intent = new Intent(Mer1Activity.this, NavMenuActivity.class);
-            startActivity(intent);
-        });
     }
 }

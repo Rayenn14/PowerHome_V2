@@ -1,70 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/vert_eau">
+    android:layout_height="match_parent">
 
-    <ImageButton
-        android:layout_marginLeft="5dp"
-        android:id="@+id/menuHamburger"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/hamburger2"
-        android:scaleType="fitCenter"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@color/vert_eau"/>
-
-
-    <!-- En-tête -->
-    <LinearLayout
-        android:id="@+id/header"
+    <!-- Contenu principal de l'activité -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:background="@color/blanc_fond"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true">
-
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/logo2"
-            android:layout_marginEnd="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Résidents"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="@color/noir"/>
-    </LinearLayout>
-
-    <!-- Conteneur de la liste -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="50dp"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
-        android:background="@color/blanc_fond"
-        android:padding="12dp"
-        android:layout_below="@id/header"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
+        android:background="@color/vert_eau">
 
-        <ListView
-            android:id="@+id/listView"
+        <!-- En-tête -->
+        <LinearLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:background="@color/blanc_fond"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/logo2"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Résidents"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/noir"/>
+        </LinearLayout>
+
+        <!-- Conteneur de la liste -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="50dp"
             android:layout_height="match_parent"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="0dp"
-            />
+            android:layout_marginBottom="50dp"
+            android:background="@color/blanc_fond"
+            android:padding="12dp"
+            android:layout_below="@id/header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
 
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"/>
+        </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</RelativeLayout>
+    <!-- Menu latéral -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_navigation"
+        android:background="@color/blanc_fond"/>
+</androidx.drawerlayout.widget.DrawerLayout>
