@@ -56,9 +56,6 @@ public class ApplianceAdapter extends ArrayAdapter<Appliance> {
         }
         else if (applianceName.contains("micro-onde")) {
             iconImageView.setImageResource(R.drawable.microonde);
-        }else {
-            // Default icon if no match is found
-            iconImageView.setImageResource(R.drawable.profil);
         }
 
         return layout;
