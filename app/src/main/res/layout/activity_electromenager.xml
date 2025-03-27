@@ -5,152 +5,72 @@
     android:layout_height="match_parent">
 
 
-    <LinearLayout
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/vert5"
-        android:padding="16dp">
+        android:layout_height="730dp"
+        android:background="@color/vert_eau">
 
-        <!-- Conteneur principal -->
+        <!-- En-tête -->
         <LinearLayout
-            android:layout_width="344dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp">
+            android:id="@+id/header"
+            android:layout_width="360dp"
+            android:layout_height="90dp"
+            android:background="@color/blanc_fond"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="33dp"
+            android:layout_centerHorizontal="true">
 
-            <!-- Première ligne -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/logo2"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
+                android:text="Mes équipements"
+                android:textSize="31dp"
+                android:textStyle="bold"
+                android:textColor="@color/noir"/>
+        </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
+        <!-- Conteneur de la liste -->
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="550dp"
+            android:background="@color/blanc_fond"
+            android:padding="12dp"
+            android:layout_below="@id/header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/lessive"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="8dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/microonde"/>
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <!-- Deuxième ligne -->
-            <LinearLayout
+            <ListView
+                android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/aspi"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="8dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/fer"/>
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <!-- Troisième ligne -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/frigo"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="8dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/ordi"/>
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/plus"
-            android:id="@+id/addEquipement"/>
-    </LinearLayout>
+        <TextView
+            android:id="@+id/total_consumption"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:text="Consommation Totale: 0W"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/noir"
+            android:background="@color/blanc_fond"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="710dp"/>
 
-    <!-- Drawer (tiroir latéral) -->
-    <!-- Menu latéral -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/menu_navigation"
-        android:background="@color/blanc_fond"/>
+
+
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

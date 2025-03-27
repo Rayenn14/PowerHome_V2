@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/blanc_casse"
+    android:padding="12dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:radius="15dp"
+    android:shadowColor="#BDBDBD">
+
+    <!-- Conteneur principal pour l'équipement -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Icône de l'équipement -->
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo2"
+            android:id="@+id/iconEquipement"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/equipment_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom de l'équipement"
+                android:textStyle="bold"
+                android:textColor="@color/vert_fonce"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/equipment_reference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Référence : ABC123"
+                android:textColor="@color/noir"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consommation"
+                android:textColor="@color/noir"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/equipment_consumption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100W"
+                android:textColor="@color/vert_fonce"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -12,4 +12,20 @@ public class Appliance {
         this.references = references;
         this.wattage = wattage;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getWattage() {
+        return wattage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getReferences() {
+        return references;
+    }
 }
