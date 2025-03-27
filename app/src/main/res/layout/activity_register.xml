@@ -81,7 +81,8 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Nom"
+            android:hint="Nom"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÇàáâãäåèéêëìíîïòóôõöùúûüç"
             android:textColor="@color/noir" />
 
         <EditText
@@ -92,7 +93,8 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Prénom"
+            android:hint="Prénom"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÇàáâãäåèéêëìíîïòóôõöùúûüç"
             android:textColor="@color/noir" />
 
         <EditText
@@ -103,7 +105,8 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Etage"
+            android:hint="Etage"
+            android:inputType="number"
             android:textColor="@color/noir" />
 
         <EditText
@@ -114,7 +117,8 @@
             android:layout_marginLeft="200dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Superface"
+            android:hint="Superface"
+            android:inputType="number"
             android:textColor="@color/noir" />
 
         <EditText
@@ -125,7 +129,8 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
-            android:text="Email"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textColor="@color/noir" />
 
         <EditText
@@ -137,7 +142,7 @@
             android:background="@drawable/round_corner"
             android:paddingStart="20dp"
             android:inputType="textPassword"
-            android:text="Mot de passe"
+            android:hint="Mot de passe"
             android:textColor="@color/noir" />
 
 
