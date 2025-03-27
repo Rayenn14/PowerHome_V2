@@ -4,8 +4,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +13,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
 import org.json.JSONArray;
@@ -95,7 +91,7 @@ public class ElectromenagerActivity extends BaseActivity {
                         lv.setAdapter(new ApplianceAdapter(this, R.layout.item_equipement, appliances));
                         totalConsumptionTV.setText("Consommation Totale: " + totalConsumption + "W");
                     } catch (JSONException jsonException) {
-                        Toast.makeText(this, "Erreur de données", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Aucun équipement trouvé", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
