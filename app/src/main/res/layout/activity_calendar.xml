@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc_fond"
+    android:id="@+id/calendar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+
+        <TextView
+            android:layout_width="125dp"
+            android:layout_height="25dp"
+            android:text="Aujourd'hui"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="-125dp"
+            android:text="Mercredi, 20 Juin 2025"
+            android:textSize="21dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="110dp">
+
+
+        <ImageButton
+            android:id="@+id/jour1"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn1"
+            android:layout_marginLeft="45dp"
+            />
+
+        <ImageButton
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="47dp"
+        android:text="Mer 20"
+        android:textStyle="bold"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="100dp"
+        android:text="Jeu 21"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="153dp"
+        android:text="Ven 22"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="206dp"
+        android:text="Sam 23"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="263dp"
+        android:text="Dim 24"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="318dp"
+        android:text="Lun 25"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="371dp"
+        android:text="Mar 26"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+</RelativeLayout>
