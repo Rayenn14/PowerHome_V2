@@ -49,16 +49,19 @@ public class HabitatAdapter extends ArrayAdapter<Habitat> {
 
 
         for (Appliance appliance : habitat.getAppliances()) {
-            String NomAppliance = appliance.name.toLowerCase();  // Assure-toi que le nom est en minuscules
+            String NomAppliance = appliance.name.toLowerCase();
 
             if (NomAppliance.contains("aspirateur")) {
-                addIcon(iconContainer, R.drawable.ic_aspirateur);
+                addIcon(iconContainer, R.drawable.aspi);
             } else if (NomAppliance.contains("climatiseur")) {
                 addIcon(iconContainer, R.drawable.ic_climatiseur);
             } else if (NomAppliance.contains("fer à repasser")) {
-                addIcon(iconContainer, R.drawable.ic_fer_a_repasser);
+                addIcon(iconContainer, R.drawable.fer);
             } else if (NomAppliance.contains("machine à laver")) {
-                addIcon(iconContainer, R.drawable.ic_machine_a_laver);
+                addIcon(iconContainer, R.drawable.lessive);
+            }
+            else if (NomAppliance.contains("micro-onde")) {
+                addIcon(iconContainer, R.drawable.microonde);
             }
         }
 
