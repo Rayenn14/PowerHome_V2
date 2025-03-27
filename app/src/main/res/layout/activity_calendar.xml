@@ -44,7 +44,11 @@
             android:layout_marginLeft="45dp"
             />
 
+
+<!--        Quand on clique sur jour2, ça doit-->
+<!--        changer le drawable/btn 2 par btn1-->
         <ImageButton
+            android:id="@+id/jour2"
             android:background="@color/blanc_fond"
             android:layout_width="40dp"
             android:layout_height="80dp"
@@ -54,6 +58,7 @@
             />
 
         <ImageButton
+            android:id="@+id/jour3"
             android:background="@color/blanc_fond"
             android:layout_width="40dp"
             android:layout_height="80dp"
@@ -63,6 +68,7 @@
             />
 
         <ImageButton
+            android:id="@+id/jour4"
             android:background="@color/blanc_fond"
             android:layout_width="40dp"
             android:layout_height="80dp"
@@ -72,6 +78,7 @@
             />
 
         <ImageButton
+            android:id="@+id/jour5"
             android:background="@color/blanc_fond"
             android:layout_width="40dp"
             android:layout_height="80dp"
@@ -81,6 +88,7 @@
             />
 
         <ImageButton
+            android:id="@+id/jour6"
             android:background="@color/blanc_fond"
             android:layout_width="40dp"
             android:layout_height="80dp"
@@ -90,6 +98,7 @@
             />
 
         <ImageButton
+            android:id="@+id/jour7"
             android:background="@color/blanc_fond"
             android:layout_width="40dp"
             android:layout_height="80dp"
