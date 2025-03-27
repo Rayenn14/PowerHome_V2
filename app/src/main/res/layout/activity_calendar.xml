@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc_fond"
+    android:id="@+id/calendar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+
+        <TextView
+            android:layout_width="125dp"
+            android:layout_height="25dp"
+            android:text="Aujourd'hui"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="-125dp"
+            android:text="Mercredi, 20 Juin 2025"
+            android:textSize="21dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="110dp">
+
+
+        <ImageButton
+            android:id="@+id/jour1"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn1"
+            android:layout_marginLeft="45dp"
+            />
+
+
+<!--        Quand on clique sur jour2, ça doit-->
+<!--        changer le drawable/btn 2 par btn1-->
+        <ImageButton
+            android:id="@+id/jour2"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/jour3"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/jour4"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/jour5"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/jour6"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/jour7"
+            android:background="@color/blanc_fond"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/btn2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-5dp"
+            />
+
+    </LinearLayout>
+
+
+
+<!--    Les couleurs pour le calendar sont dans colors.xml-->
+<!--    elles sont à attribuées depuis JAVA-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginLeft="105dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/minuitToSix"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gris"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="80dp"
+                android:background="@color/barre_gris"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sixToMidi"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gris"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="80dp"
+                android:background="@color/barre_gris"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/midiToDixHuit"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/gris"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="80dp"
+                android:background="@color/barre_gris"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dixHuitToVingtTrois"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/gris"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="80dp"
+                android:background="@color/barre_gris"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="47dp"
+        android:text="Mer 20"
+        android:textStyle="bold"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="100dp"
+        android:text="Jeu 21"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="153dp"
+        android:text="Ven 22"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="206dp"
+        android:text="Sam 23"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="263dp"
+        android:text="Dim 24"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="318dp"
+        android:text="Lun 25"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="371dp"
+        android:text="Mar 26"
+        android:paddingStart="8dp"
+        android:textColor="@color/blanc_fond"/>
+
+    <TextView
+        android:id="@+id/time_minuit"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="00:00"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="43dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="60dp"
+        android:background="#818181"/>
+
+    <TextView
+        android:id="@+id/time_six"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="06:00"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="43dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="60dp"
+        android:background="#818181"/>
+
+    <TextView
+        android:id="@+id/time_midi"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="12:00"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="43dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="60dp"
+        android:background="#818181"/>
+
+    <TextView
+        android:id="@+id/time_dixhuit"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="18:00"
+        android:layout_marginTop="515dp"
+        android:layout_marginLeft="43dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="60dp"
+        android:background="#818181"/>
+
+    <TextView
+        android:id="@+id/time_vingttrois"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="23:00"
+        android:layout_marginTop="620dp"
+        android:layout_marginLeft="43dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

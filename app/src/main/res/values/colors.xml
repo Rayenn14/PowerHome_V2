@@ -15,5 +15,15 @@
     <color name="blanc_casse">#F8F8F8</color>
     <color name="vert_eau">#ADC9AC</color>
     <color name="vert_fonce">#6F9A78</color>
+<!--  calendar colors  -->
+    <color name="gris">#B6B4B4</color>
+    <color name="barre_gris">#686767</color>
+    <color name="vert">#D0ECE7</color>
+    <color name="orange">#FAD7A0</color>
+    <color name="rouge">#F5B7B1</color>
+    <color name="barre_vert">#7FBFAA</color>
+    <color name="barre_orange">#D1A472</color>
+    <color name="barre_rouge">#B8766A</color>
+
 
 </resources>
