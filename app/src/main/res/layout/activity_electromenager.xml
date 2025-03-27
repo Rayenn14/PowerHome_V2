@@ -38,8 +38,8 @@
                 android:textColor="@color/noir"/>
         </LinearLayout>
 
-        <!-- Conteneur de la liste -->
-        <LinearLayout
+        <!-- Conteneur de la liste transformé en RelativeLayout -->
+        <RelativeLayout
             android:layout_width="360dp"
             android:layout_height="550dp"
             android:background="@color/blanc_fond"
@@ -55,7 +55,21 @@
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="0.5dp"/>
 
-        </LinearLayout>
+            <!-- Bouton Ajouter positionné en bas à droite -->
+            <ImageButton
+                android:id="@+id/btn_add_appliance"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/plus"
+                android:elevation="10dp"
+                android:background="@color/blanc_fond"
+                android:scaleType="centerInside"
+                android:clipToOutline="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"/>
+        </RelativeLayout>
+
 
         <TextView
             android:id="@+id/total_consumption"
