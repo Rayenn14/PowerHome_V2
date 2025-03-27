@@ -81,6 +81,8 @@ public class SigninActivity extends AppCompatActivity {
 
                             if (response.has("token")) {
                                 String token = response.getString("token");
+                                String nom = response.optString("lastname", "");  // Récupérer le nom (valeur par défaut = "")
+                                String prenom = response.optString("firstname", "");
 
                                 Toast.makeText(SigninActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
 
@@ -88,6 +90,8 @@ public class SigninActivity extends AppCompatActivity {
                                 getSharedPreferences("UserPrefs", MODE_PRIVATE)
                                         .edit()
                                         .putString("user_token", token)
+                                        .putString("user_nom", nom)
+                                        .putString("user_prenom", prenom)
                                         .apply();
 
                                 // Redirige vers la 2e activité, la Resident pour les tests

@@ -1,6 +1,7 @@
 package com.example.powerhome_v2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -32,8 +33,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         TextView etageResident = headerView.findViewById(R.id.etageResident);
         ImageView imageProfile = headerView.findViewById(R.id.imageProfile);
 
-        nomResident.setText("Sophia Rose");
-        etageResident.setText("Étage : 2");
+        SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String nom = prefs.getString("user_nom", "Nom inconnu");
+        String prenom = prefs.getString("user_prenom", "Prénom inconnu");
+
+        nomResident.setText(nom + " " + prenom);
+
         imageProfile.setImageResource(R.drawable.profil);
 
 
