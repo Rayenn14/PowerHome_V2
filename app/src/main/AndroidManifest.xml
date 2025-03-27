@@ -29,6 +29,7 @@
         <activity android:name=".SigninActivity" android:exported="false"/>
         <activity android:name=".Mer1Activity" android:exported="false"/>
         <activity android:name=".ForgetpwdActivity" android:exported="false"/>
+        <activity android:name=".CalendarActivity" android:exported="false"/>
         <activity android:name=".MainActivity" android:exported="false"/>
         <activity android:name=".NvMdpActivity" android:exported="false"/>
         <activity android:name=".ProfilActivity" android:exported="false"/>
