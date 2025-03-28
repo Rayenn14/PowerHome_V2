@@ -135,7 +135,7 @@
                 android:background="@color/barre_gris"/>
 
             <TextView
-                android:id="@+id/typeConsommation1"
+                android:id="@+id/maxWattageMinuitToSix"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="20dp"
@@ -144,7 +144,7 @@
                 android:text="Consommation X"/>
 
             <TextView
-                android:id="@+id/typePourcentage1"
+                android:id="@+id/pourcentageMinuitToSix"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="-130dp"
@@ -167,7 +167,7 @@
                 android:background="@color/barre_gris"/>
 
             <TextView
-                android:id="@+id/typeConsommation2"
+                android:id="@+id/maxWattageSixToMidi"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="20dp"
@@ -176,7 +176,7 @@
                 android:text="Consommation X"/>
 
             <TextView
-                android:id="@+id/typePourcentage2"
+                android:id="@+id/pourcentageSixToMidi"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="-130dp"
@@ -199,7 +199,7 @@
                 android:background="@color/barre_gris"/>
 
             <TextView
-                android:id="@+id/typeConsommation3"
+                android:id="@+id/maxWattageMidiToDixHuit"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="20dp"
@@ -208,7 +208,7 @@
                 android:text="Consommation X"/>
 
             <TextView
-                android:id="@+id/typePourcentage3"
+                android:id="@+id/pourcentageMidiToDixHuit"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="-130dp"
@@ -230,7 +230,7 @@
                 android:layout_height="80dp"
                 android:background="@color/barre_gris"/>
             <TextView
-                android:id="@+id/typeConsommation4"
+                android:id="@+id/maxWattageDixHuitToVingt"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="20dp"
@@ -239,7 +239,7 @@
                 android:text="Consommation X"/>
 
             <TextView
-                android:id="@+id/typePourcentage4"
+                android:id="@+id/pourcentageDixHuitToVingt"
                 android:layout_width="130dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="-130dp"

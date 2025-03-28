@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -30,6 +31,23 @@ public class CalendarFragment extends Fragment {
     private LinearLayout minuitToSix, sixToMidi, midiToDixHuit, dixHuitToVingt;
     private Button btnAddReservation;
 
+    private TextView maxWattageMinuitToSix, pourcentageMinuitToSix;
+    private TextView maxWattageSixToMidi, pourcentageSixToMidi;
+    private TextView maxWattageMidiToDixHuit, pourcentageMidiToDixHuit;
+    private TextView maxWattageDixHuitToVingt, pourcentageDixHuitToVingt;
+
+    private int currentConsumptionMinuitToSix;
+    private int maxWattageMinuitToSixValue;
+
+    private int currentConsumptionSixToMidi;
+    private int maxWattageSixToMidiValue;
+
+    private int currentConsumptionMidiToDixHuit;
+    private int maxWattageMidiToDixHuitValue;
+
+    private int currentConsumptionDixHuitToVingt;
+    private int maxWattageDixHuitToVingtValue;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_calendar, container, false);
@@ -39,6 +57,19 @@ public class CalendarFragment extends Fragment {
         sixToMidi = view.findViewById(R.id.sixToMidi);
         midiToDixHuit = view.findViewById(R.id.midiToDixHuit);
         dixHuitToVingt = view.findViewById(R.id.dixHuitToVingtTrois);
+
+        maxWattageMinuitToSix = view.findViewById(R.id.maxWattageMinuitToSix);
+        pourcentageMinuitToSix = view.findViewById(R.id.pourcentageMinuitToSix);
+
+        maxWattageSixToMidi = view.findViewById(R.id.maxWattageSixToMidi);
+        pourcentageSixToMidi = view.findViewById(R.id.pourcentageSixToMidi);
+
+        maxWattageMidiToDixHuit = view.findViewById(R.id.maxWattageMidiToDixHuit);
+        pourcentageMidiToDixHuit = view.findViewById(R.id.pourcentageMidiToDixHuit);
+
+        maxWattageDixHuitToVingt = view.findViewById(R.id.maxWattageDixHuitToVingt);
+        pourcentageDixHuitToVingt = view.findViewById(R.id.pourcentageDixHuitToVingt);
+
 
         // Initialisation du bouton pour ajouter une réservation
         btnAddReservation = view.findViewById(R.id.btn_add_reservation);
@@ -78,30 +109,43 @@ public class CalendarFragment extends Fragment {
 
     private void updateUI(JSONArray jsonArray) {
         try {
-            // Assurer que le JSON contient les informations nécessaires pour chaque créneau horaire
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject timeSlot = jsonArray.getJSONObject(i);
 
-                // Récupérer les informations sur les consommations et les max_wattage
-                String timeSlotLabel = timeSlot.getString("begin") + "-" + timeSlot.getString("end");
-
-                // Convertir max_wattage et total_consumption en entiers
                 int consumption = Integer.parseInt(timeSlot.getString("total_consumption"));
                 int maxWattage = Integer.parseInt(timeSlot.getString("max_wattage"));
+                double percentage = (maxWattage == 0) ? 0 : (double) consumption / maxWattage * 100;
 
-                // Déterminer quel créneau horaire mettre à jour
+                String timeSlotLabel = timeSlot.getString("begin") + "-" + timeSlot.getString("end");
+
                 switch (timeSlotLabel) {
                     case "2025-06-25 00:00:00-2025-06-25 05:59:00":
                         setColor(minuitToSix, consumption, maxWattage);
+                        maxWattageMinuitToSix.setText("Max: " + maxWattage + "W");
+                        pourcentageMinuitToSix.setText("Usage: " + String.format("%.1f", percentage) + "%");
+                        currentConsumptionMinuitToSix = consumption;
+                        maxWattageMinuitToSixValue = maxWattage;
                         break;
                     case "2025-06-25 06:00:00-2025-06-25 11:59:00":
                         setColor(sixToMidi, consumption, maxWattage);
+                        maxWattageSixToMidi.setText("Max: " + maxWattage + "W");
+                        pourcentageSixToMidi.setText("Usage: " + String.format("%.1f", percentage) + "%");
+                        currentConsumptionSixToMidi = consumption;
+                        maxWattageSixToMidiValue = maxWattage;
                         break;
                     case "2025-06-25 12:00:00-2025-06-25 17:59:00":
                         setColor(midiToDixHuit, consumption, maxWattage);
+                        maxWattageMidiToDixHuit.setText("Max: " + maxWattage + "W");
+                        pourcentageMidiToDixHuit.setText("Usage: " + String.format("%.1f", percentage) + "%");
+                        currentConsumptionMidiToDixHuit = consumption;
+                        maxWattageMidiToDixHuitValue = maxWattage;
                         break;
                     case "2025-06-25 18:00:00-2025-06-25 23:59:00":
                         setColor(dixHuitToVingt, consumption, maxWattage);
+                        maxWattageDixHuitToVingt.setText("Max: " + maxWattage + "W");
+                        pourcentageDixHuitToVingt.setText("Usage: " + String.format("%.1f", percentage) + "%");
+                        currentConsumptionDixHuitToVingt = consumption;
+                        maxWattageDixHuitToVingtValue = maxWattage;
                         break;
                 }
             }
@@ -109,6 +153,7 @@ public class CalendarFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
 
     private void setColor(LinearLayout layout, int consumption, int maxWattage) {
         // S'assurer que maxWattage est supérieur à 0 pour éviter une division par 0
@@ -185,20 +230,48 @@ public class CalendarFragment extends Fragment {
                 return;
             }
 
-            // Récupérer l'ID de l'équipement en utilisant le tag du spinner
-            List<Integer> applianceIds = (List<Integer>) applianceSpinner.getTag();
-            int applianceId = applianceIds.get(applianceSpinner.getSelectedItemPosition() - 1); // -1 pour ignorer "Sélectionner un équipement"
+            // Récupération de l'équipement sélectionné
+            List<Appliance> appliances = (List<Appliance>) applianceSpinner.getTag();
+            int selectedPosition = applianceSpinner.getSelectedItemPosition();
+            Appliance selectedAppliance = appliances.get(selectedPosition - 1);
+            int applianceWattage = selectedAppliance.getWattage();
 
-            // Envoie l'ID de l'équipement et la valeur numérique pour le créneau horaire
+            // Récupération des données du créneau
             int timeSlotValue = getTimeSlotValue(timeSlot);
+            int currentConsumption;
+            int maxWattage;
 
-            // Ajout de la réservation dans la base de données
-            addReservationToDatabase(token, applianceId, timeSlotValue);
+            switch (timeSlotValue) {
+                case 1:
+                    currentConsumption = currentConsumptionMinuitToSix;
+                    maxWattage = maxWattageMinuitToSixValue;
+                    break;
+                case 2:
+                    currentConsumption = currentConsumptionSixToMidi;
+                    maxWattage = maxWattageSixToMidiValue;
+                    break;
+                case 3:
+                    currentConsumption = currentConsumptionMidiToDixHuit;
+                    maxWattage = maxWattageMidiToDixHuitValue;
+                    break;
+                case 4:
+                    currentConsumption = currentConsumptionDixHuitToVingt;
+                    maxWattage = maxWattageDixHuitToVingtValue;
+                    break;
+                default:
+                    Toast.makeText(getActivity(), "Créneau invalide", Toast.LENGTH_SHORT).show();
+                    return;
+            }
 
-            // Fermer le dialogue après soumission
+            // Vérification de la consommation
+            if (currentConsumption + applianceWattage > maxWattage) {
+                Toast.makeText(getActivity(), "La consommation maximale de " + maxWattage + "W serait dépassée !", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            // Ajout de la réservation
+            addReservationToDatabase(token, selectedAppliance.getId(), timeSlotValue);
             dialog.dismiss();
-
-            // Mettre à jour les données d'affichage (les couleurs et consommations)
             loadConsumptionData();
         });
 
@@ -235,31 +308,32 @@ public class CalendarFragment extends Fragment {
 
                     try {
                         JSONArray appliancesArray = new JSONArray(result);
+                        List<Appliance> appliancesList = new ArrayList<>();
                         List<String> applianceNames = new ArrayList<>();
-                        final List<Integer> applianceIds = new ArrayList<>(); // Liste pour stocker les IDs des équipements
                         applianceNames.add("Sélectionner un équipement");
 
-                        // Remplir la liste avec les noms des équipements et les IDs
                         for (int i = 0; i < appliancesArray.length(); i++) {
                             JSONObject applianceJson = appliancesArray.getJSONObject(i);
-                            applianceNames.add(applianceJson.getString("name"));
-                            applianceIds.add(applianceJson.getInt("id")); // Ajouter l'ID de l'équipement
+                            Appliance appliance = new Appliance(
+                                    applianceJson.getInt("id"),
+                                    applianceJson.getString("name"),
+                                    applianceJson.getString("reference"),
+                                    applianceJson.getInt("wattage")
+                            );
+                            appliancesList.add(appliance);
+                            applianceNames.add(appliance.getName());
                         }
 
-                        // Met à jour le Spinner avec les noms des équipements
                         applianceAdapter.clear();
                         applianceAdapter.addAll(applianceNames);
                         applianceAdapter.notifyDataSetChanged();
-
-                        // Enregistrez les IDs des équipements dans une variable globale ou dans une méthode interne
-                        applianceSpinner.setTag(applianceIds);  // Stocker les IDs dans un tag
+                        applianceSpinner.setTag(appliancesList);
 
                     } catch (JSONException jsonException) {
                         Toast.makeText(getActivity(), "Aucun équipement trouvé", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
-
     private void addReservationToDatabase(String token, int applianceId, int timeSlotValue) {
         String url = "http://192.168.1.18/PowerHome/add_appliance_to_timeslot.php"
                 + "?token=" + token
