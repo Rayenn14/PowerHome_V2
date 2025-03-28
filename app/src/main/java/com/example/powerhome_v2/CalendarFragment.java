@@ -176,7 +176,6 @@ public class CalendarFragment extends Fragment {
             fetchUserAppliances(token, applianceSpinner, applianceAdapter);
         }
 
-        // Gestion de la soumission du formulaire
         submitButton.setOnClickListener(v -> {
             String appliance = applianceSpinner.getSelectedItem().toString();
             String timeSlot = timeSlotSpinner.getSelectedItem().toString();
@@ -192,8 +191,17 @@ public class CalendarFragment extends Fragment {
 
             // Envoie l'ID de l'équipement et la valeur numérique pour le créneau horaire
             int timeSlotValue = getTimeSlotValue(timeSlot);
+
+            // Ajout de la réservation dans la base de données
             addReservationToDatabase(token, applianceId, timeSlotValue);
+
+            // Fermer le dialogue après soumission
+            dialog.dismiss();
+
+            // Mettre à jour les données d'affichage (les couleurs et consommations)
+            loadConsumptionData();
         });
+
     }
 
 
@@ -251,7 +259,6 @@ public class CalendarFragment extends Fragment {
                     }
                 });
     }
-
 
     private void addReservationToDatabase(String token, int applianceId, int timeSlotValue) {
         String url = "http://192.168.1.18/PowerHome/add_appliance_to_timeslot.php"
