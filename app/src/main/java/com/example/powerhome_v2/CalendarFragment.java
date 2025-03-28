@@ -51,13 +51,13 @@ public class CalendarFragment extends Fragment {
     private TextView currentDateTextView;
 
     private final String[] dates = {
-            "20 Juin 2025",
-            "21 Juin 2025",
-            "22 Juin 2025",
-            "23 Juin 2025",
-            "24 Juin 2025",
-            "25 Juin 2025",
-            "26 Juin 2025"
+            "Mercredi 20 Juin 2025",
+            "Jeudi 21 Juin 2025",
+            "Vendredi 22 Juin 2025",
+            "Samedi 23 Juin 2025",
+            "Dimanche 24 Juin 2025",
+            "Lundi 25 Juin 2025",
+            "Mardi 26 Juin 2025"
     };
 
     @Override
@@ -86,6 +86,8 @@ public class CalendarFragment extends Fragment {
         btnAddReservation = view.findViewById(R.id.btn_add_reservation);
         btnAddReservation.setOnClickListener(v -> showAddReservationDialog());
 
+        currentDateTextView = view.findViewById(R.id.currentDateTextView);
+
         jour1 = view.findViewById(R.id.jour1);
         jour2 = view.findViewById(R.id.jour2);
         jour3 = view.findViewById(R.id.jour3);
@@ -95,8 +97,11 @@ public class CalendarFragment extends Fragment {
         jour7 = view.findViewById(R.id.jour7);
 
         View.OnClickListener dayClickListener = v -> {
+            int dayIndex = getDayIndex(v.getId());
+            updateDateDisplay(dayIndex);
             updateDaySelection((ImageButton) v);
-            if (v.getId() == R.id.jour1) {
+
+            if (v.getId() == R.id.jour1) { // Conserver la logique existante pour jour6
                 loadConsumptionData();
             } else {
                 reinitialiserCases();
@@ -114,6 +119,23 @@ public class CalendarFragment extends Fragment {
         loadConsumptionData();
 
         return view;
+    }
+
+    private void updateDateDisplay(int dayIndex) {
+        if (currentDateTextView != null && dayIndex >= 0 && dayIndex < dates.length) {
+            currentDateTextView.setText(dates[dayIndex]);
+        }
+    }
+
+    private int getDayIndex(int viewId) {
+        if (viewId == R.id.jour1) return 0;
+        else if (viewId == R.id.jour2) return 1;
+        else if (viewId == R.id.jour3) return 2;
+        else if (viewId == R.id.jour4) return 3;
+        else if (viewId == R.id.jour5) return 4;
+        else if (viewId == R.id.jour6) return 5;
+        else if (viewId == R.id.jour7) return 6;
+        return 0;
     }
 
     private void loadConsumptionData() {
