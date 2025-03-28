@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Thème principal sans ActionBar -->
+    <style name="Theme.PowerHome_V2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/vert_eau</item> <!-- Couleur barre d'action -->
+        <item name="android:windowBackground">@color/vert_eau</item> <!-- Fond d'écran global -->
+    </style>
+
+    <!-- Style personnalisé pour la barre d'action si nécessaire -->
+    <style name="MyActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/vert_eau</item>
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+    </style>
+
+    <!-- Style du titre -->
+    <style name="MyTitleTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/blanc_fond</item>
+    </style>
+</resources>

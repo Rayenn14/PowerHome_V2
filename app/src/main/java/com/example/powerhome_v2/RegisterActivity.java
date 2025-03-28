@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         .putString("user_token", token)
                                         .apply();
 
-                                Intent intent = new Intent(RegisterActivity.this, ResidentActivity.class);
+                                Intent intent = new Intent(RegisterActivity.this, HabitatListFragment.class);
                                 startActivity(intent);
                                 finish();
                             } else {

@@ -95,7 +95,7 @@ public class SigninActivity extends AppCompatActivity {
                                         .apply();
 
                                 // Redirige vers la 2e activité, la Resident pour les tests
-                                Intent intent = new Intent(SigninActivity.this, ResidentActivity.class);
+                                Intent intent = new Intent(SigninActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

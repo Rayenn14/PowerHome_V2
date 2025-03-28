@@ -3,10 +3,13 @@ package com.example.powerhome_v2;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalendarActivity extends BaseActivity {
+public class CalendarActivity extends AppCompatActivity {
 
     private List<ImageButton> dayButtons = new ArrayList<>();
     private int selectedDayId = R.id.jour1;
@@ -14,7 +17,7 @@ public class CalendarActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setActivityContent(R.layout.activity_calendar);
+        setContentView(R.layout.activity_calendar);
 
         setupDayButtons();
         setInitialSelection();
