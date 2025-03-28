@@ -3,13 +3,15 @@ package com.example.powerhome_v2;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfilActivity extends BaseActivity {
+
+public class ProfilActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setActivityContent(R.layout.activity_profil);
+        setContentView(R.layout.activity_profil);
 
     }
 }

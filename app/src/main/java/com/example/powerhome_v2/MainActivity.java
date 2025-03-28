@@ -1,5 +1,7 @@
 package com.example.powerhome_v2;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -10,7 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,9 +30,21 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
-        // Configuration du Toolbar pour remplacer l'ActionBar
+
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar); // Remplacer l'ActionBar par le Toolbar
+        setSupportActionBar(toolbar);
+
+        View headerView = navigationView.getHeaderView(0);
+        // Récupérer les éléments du header
+        TextView nomResident = headerView.findViewById(R.id.nomResident);
+
+        // Charger les données depuis SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String nom = sharedPreferences.getString("user_nom", "Nom inconnu");
+        String prenom = sharedPreferences.getString("user_prenom", "Prénom inconnu");
+
+        // Afficher le nom et prénom dynamiquement
+        nomResident.setText(prenom + " " + nom);
 
         // Configuration du bouton hamburger
         toggle = new ActionBarDrawerToggle(
