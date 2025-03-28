@@ -8,12 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,7 +24,6 @@ public class SigninActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.mdp);
         loginButton = findViewById(R.id.BoutonNext);
@@ -36,12 +32,10 @@ public class SigninActivity extends AppCompatActivity {
         TextView mdpOublie = findViewById(R.id.Mdpoublieeclick);
         ImageButton goBackTo = findViewById(R.id.RetourSplash);
 
-
         creerCompte.setOnClickListener(v -> startActivity(new Intent(SigninActivity.this, RegisterActivity.class)));
         mdpOublie.setOnClickListener(v -> startActivity(new Intent(SigninActivity.this, ForgetpwdActivity.class)));
         goBackTo.setOnClickListener(v -> startActivity(new Intent(SigninActivity.this, SplashActivity.class)));
 
-        // Gestion du bouton de connexion
         loginButton.setOnClickListener(v -> loginUser());
     }
 
@@ -75,7 +69,6 @@ public class SigninActivity extends AppCompatActivity {
                             Log.e("LoginError", e.getMessage());
                             return;
                         }
-
                         try {
                             JSONObject response = new JSONObject(result);
 
@@ -83,18 +76,13 @@ public class SigninActivity extends AppCompatActivity {
                                 String token = response.getString("token");
                                 String nom = response.optString("lastname", "");  // Récupérer le nom (valeur par défaut = "")
                                 String prenom = response.optString("firstname", "");
-
                                 Toast.makeText(SigninActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
-
-
                                 getSharedPreferences("UserPrefs", MODE_PRIVATE)
                                         .edit()
                                         .putString("user_token", token)
                                         .putString("user_nom", nom)
                                         .putString("user_prenom", prenom)
                                         .apply();
-
-                                // Redirige vers la 2e activité, la Resident pour les tests
                                 Intent intent = new Intent(SigninActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();

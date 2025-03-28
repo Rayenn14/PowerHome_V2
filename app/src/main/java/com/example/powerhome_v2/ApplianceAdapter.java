@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -38,12 +37,11 @@ public class ApplianceAdapter extends ArrayAdapter<Appliance> {
         TextView consumptionTV = layout.findViewById(R.id.equipment_consumption);
         ImageView iconImageView = layout.findViewById(R.id.iconEquipement);
 
-        // Set the text fields for appliance name, reference, and consumption
+
         nameTV.setText(appliance.getName());
         referenceTV.setText("Référence: " + appliance.getReferences());
         consumptionTV.setText(appliance.getWattage() + "W");
 
-        // Set the icon for the appliance based on its name
         String applianceName = appliance.getName().toLowerCase();
         if (applianceName.contains("aspirateur")) {
             iconImageView.setImageResource(R.drawable.aspi);

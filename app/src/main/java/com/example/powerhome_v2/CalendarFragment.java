@@ -31,24 +31,16 @@ import java.util.List;
 public class CalendarFragment extends Fragment {
     private LinearLayout minuitToSix, sixToMidi, midiToDixHuit, dixHuitToVingt;
     private Button btnAddReservation;
-    private TextView maxWattageMinuitToSix, pourcentageMinuitToSix;
-    private TextView maxWattageSixToMidi, pourcentageSixToMidi;
-    private TextView maxWattageMidiToDixHuit, pourcentageMidiToDixHuit;
-    private TextView maxWattageDixHuitToVingt, pourcentageDixHuitToVingt;
-    private int currentConsumptionMinuitToSix;
-    private int maxWattageMinuitToSixValue;
-
-    private int currentConsumptionSixToMidi;
-    private int maxWattageSixToMidiValue;
-
-    private int currentConsumptionMidiToDixHuit;
-    private int maxWattageMidiToDixHuitValue;
-
-    private int currentConsumptionDixHuitToVingt;
-    private int maxWattageDixHuitToVingtValue;
     private ImageButton jour1, jour2, jour3, jour4, jour5, jour6, jour7;
+    private TextView maxWattageMinuitToSix, pourcentageMinuitToSix,
+            maxWattageSixToMidi, pourcentageSixToMidi,
+            maxWattageMidiToDixHuit, pourcentageMidiToDixHuit,
+            maxWattageDixHuitToVingt, pourcentageDixHuitToVingt,
+            currentDateTextView;
+    private int currentConsumptionMinuitToSix, maxWattageMinuitToSixValue, currentConsumptionSixToMidi, maxWattageSixToMidiValue,
+            currentConsumptionMidiToDixHuit, maxWattageMidiToDixHuitValue,
+            currentConsumptionDixHuitToVingt, maxWattageDixHuitToVingtValue;
 
-    private TextView currentDateTextView;
 
     private final String[] dates = {
             "Mercredi 20 Juin 2025",
@@ -64,7 +56,6 @@ public class CalendarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_calendar, container, false);
 
-        // Initialisation des vues
         minuitToSix = view.findViewById(R.id.minuitToSix);
         sixToMidi = view.findViewById(R.id.sixToMidi);
         midiToDixHuit = view.findViewById(R.id.midiToDixHuit);
@@ -82,7 +73,6 @@ public class CalendarFragment extends Fragment {
         maxWattageDixHuitToVingt = view.findViewById(R.id.maxWattageDixHuitToVingt);
         pourcentageDixHuitToVingt = view.findViewById(R.id.pourcentageDixHuitToVingt);
 
-        // Initialisation du bouton pour ajouter une réservation
         btnAddReservation = view.findViewById(R.id.btn_add_reservation);
         btnAddReservation.setOnClickListener(v -> showAddReservationDialog());
 
@@ -101,7 +91,7 @@ public class CalendarFragment extends Fragment {
             updateDateDisplay(dayIndex);
             updateDaySelection((ImageButton) v);
 
-            if (v.getId() == R.id.jour1) { // Conserver la logique existante pour jour6
+            if (v.getId() == R.id.jour1) {
                 loadConsumptionData();
             } else {
                 reinitialiserCases();
@@ -151,7 +141,6 @@ public class CalendarFragment extends Fragment {
                         Toast.makeText(getActivity(), "Erreur de connexion", Toast.LENGTH_SHORT).show();
                         return;
                     }
-
                     Log.d("API Response", result);
 
                     try {
@@ -214,16 +203,11 @@ public class CalendarFragment extends Fragment {
 
 
     private void setColor(LinearLayout layout, int consumption, int maxWattage) {
-        // S'assurer que maxWattage est supérieur à 0 pour éviter une division par 0
         if (maxWattage == 0) {
             layout.setBackgroundColor(Color.GRAY); // Gris si max_wattage est 0
             return;
         }
-
-        // Calculer le pourcentage de consommation par rapport au max_wattage
         double percentage = (double) consumption / maxWattage * 100;
-
-        // Déterminer la couleur en fonction de ce pourcentage
         if (percentage <= 30) {
             layout.setBackgroundColor(Color.GREEN); // Vert
         } else if (percentage <= 70) {
@@ -239,12 +223,10 @@ public class CalendarFragment extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Ajouter une réservation");
 
-        // Création d'un layout pour le dialogue
         LinearLayout layout = new LinearLayout(getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(20, 20, 20, 20);
 
-        // Spinner pour choisir l'équipement
         final Spinner applianceSpinner = new Spinner(getActivity());
         List<String> applianceNames = new ArrayList<>();
         applianceNames.add("Chargement des équipements...");
@@ -253,7 +235,6 @@ public class CalendarFragment extends Fragment {
         applianceSpinner.setAdapter(applianceAdapter);
         layout.addView(applianceSpinner);
 
-        // Spinner pour choisir le créneau horaire
         final Spinner timeSlotSpinner = new Spinner(getActivity());
         String[] timeSlots = {
                 "00:00 - 06:00", "06:00 - 12:00", "12:00 - 18:00", "18:00 - 00:00"
@@ -262,17 +243,14 @@ public class CalendarFragment extends Fragment {
         timeSlotSpinner.setAdapter(timeSlotAdapter);
         layout.addView(timeSlotSpinner);
 
-        // Bouton de soumission
         Button submitButton = new Button(getActivity());
         submitButton.setText("Soumettre");
         layout.addView(submitButton);
 
-        // Configuration du builder avec notre layout personnalisé
         builder.setView(layout);
         AlertDialog dialog = builder.create();
         dialog.show();
 
-        // Récupérer les équipements de l'utilisateur connecté
         SharedPreferences prefs = getActivity().getSharedPreferences("UserPrefs", getActivity().MODE_PRIVATE);
         String token = prefs.getString("user_token", null);
         if (token != null && !token.isEmpty()) {
@@ -288,7 +266,6 @@ public class CalendarFragment extends Fragment {
                 return;
             }
 
-            // Récupération de l'équipement sélectionné
             List<Appliance> appliances = (List<Appliance>) applianceSpinner.getTag();
             int selectedPosition = applianceSpinner.getSelectedItemPosition();
             Appliance selectedAppliance = appliances.get(selectedPosition - 1);
@@ -347,11 +324,10 @@ public class CalendarFragment extends Fragment {
             case "18:00 - 00:00":
                 return 4;
             default:
-                return 0; // Valeur par défaut, au cas où quelque chose échoue
+                return 0;
         }
     }
 
-    // Fonction pour récupérer les équipements de l'utilisateur connecté et mettre à jour le Spinner
     private void fetchUserAppliances(String token, final Spinner applianceSpinner, final ArrayAdapter<String> applianceAdapter) {
         String url = "http://192.168.1.18/PowerHome/getAppliancesByUser.php?token=" + token;
 
@@ -381,23 +357,17 @@ public class CalendarFragment extends Fragment {
                             appliancesList.add(appliance);
                             applianceNames.add(appliance.getName());
                         }
-
                         applianceAdapter.clear();
                         applianceAdapter.addAll(applianceNames);
                         applianceAdapter.notifyDataSetChanged();
                         applianceSpinner.setTag(appliancesList);
-
                     } catch (JSONException jsonException) {
                         Toast.makeText(getActivity(), "Aucun équipement trouvé", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
     private void addReservationToDatabase(String token, int applianceId, int timeSlotValue) {
-        String url = "http://192.168.1.18/PowerHome/add_appliance_to_timeslot.php"
-                + "?token=" + token
-                + "&appliance_id=" + applianceId
-                + "&time_slot=" + timeSlotValue;
-
+        String url = "http://192.168.1.18/PowerHome/add_appliance_to_timeslot.php" + "?token=" + token + "&appliance_id=" + applianceId + "&time_slot=" + timeSlotValue;
         Ion.with(getActivity())
                 .load(url)
                 .asString()
@@ -441,14 +411,11 @@ public class CalendarFragment extends Fragment {
         pourcentageMidiToDixHuit.setText(" ");
         maxWattageDixHuitToVingt.setText(" ");
         pourcentageDixHuitToVingt.setText(" ");
-
         setColor(minuitToSix, 0, 100);
         setColor(sixToMidi, 0, 100);
         setColor(midiToDixHuit, 0, 100);
         setColor(dixHuitToVingt, 0, 100);
-
     }
-
     private void updateDaySelection(ImageButton selectedDay) {
         int[] dayButtons = {R.id.jour1, R.id.jour2, R.id.jour3, R.id.jour4, R.id.jour5, R.id.jour6, R.id.jour7};
 

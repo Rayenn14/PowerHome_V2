@@ -16,11 +16,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.fragment.app.Fragment;
-
 import com.koushikdutta.ion.Ion;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MonHabitatFragment extends Fragment {
-
     private ProgressDialog progressDialog;
     private ListView lv;
     private TextView totalConsumptionTV;
@@ -39,7 +35,6 @@ public class MonHabitatFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_mon_habitat, container, false);
 
-        // Initialisation des éléments de la vue du fragment
         lv = view.findViewById(R.id.listView);
         totalConsumptionTV = view.findViewById(R.id.total_consumption);
 
@@ -52,7 +47,6 @@ public class MonHabitatFragment extends Fragment {
         } else {
             Toast.makeText(getActivity(), "Token manquant", Toast.LENGTH_SHORT).show();
         }
-
         return view;
     }
 
@@ -74,12 +68,10 @@ public class MonHabitatFragment extends Fragment {
                 .asString()
                 .setCallback((e, result) -> {
                     progressDialog.dismiss();
-
                     if (e != null) {
                         Toast.makeText(getActivity(), "Erreur de connexion", Toast.LENGTH_SHORT).show();
                         return;
                     }
-
                     try {
                         JSONArray appliancesArray = new JSONArray(result);
                         List<Appliance> appliances = new ArrayList<>();
@@ -96,7 +88,6 @@ public class MonHabitatFragment extends Fragment {
                             ));
                             totalConsumption += wattage;
                         }
-
                         lv.setAdapter(new ApplianceAdapter(getActivity(), R.layout.item_equipement, appliances));
                         totalConsumptionTV.setText("Consommation Totale: " + totalConsumption + "W");
                     } catch (JSONException jsonException) {
@@ -108,26 +99,21 @@ public class MonHabitatFragment extends Fragment {
     private void showAddApplianceDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Ajouter un équipement");
-
         LinearLayout layout = new LinearLayout(getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(20, 20, 20, 20);
-
         final Spinner nameSpinner = new Spinner(getActivity());
         String[] appliances = {"Aspirateur", "Climatiseur", "Fer à repasser", "Machine à laver", "Micro-ondes"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, appliances);
         nameSpinner.setAdapter(adapter);
         layout.addView(nameSpinner);
-
         final EditText referenceInput = new EditText(getActivity());
         referenceInput.setHint("Référence");
         layout.addView(referenceInput);
-
         final EditText wattageInput = new EditText(getActivity());
         wattageInput.setHint("Consommation (W)");
         wattageInput.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
         layout.addView(wattageInput);
-
         Button submitButton = new Button(getActivity());
         submitButton.setText("Soumettre");
         layout.addView(submitButton);
@@ -153,7 +139,6 @@ public class MonHabitatFragment extends Fragment {
 
     private void addAppliance(String name, String reference, String wattage, String token) {
         String url = "http://192.168.1.18/PowerHome/addAppliance.php";
-
         Ion.with(getActivity())
                 .load("POST", url)
                 .setBodyParameter("name", name)

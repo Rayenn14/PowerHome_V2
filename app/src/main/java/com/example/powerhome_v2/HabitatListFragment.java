@@ -1,20 +1,11 @@
 package com.example.powerhome_v2;
 
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -29,19 +20,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HabitatListFragment extends Fragment {
-    private ProgressDialog progressDialog;
-    private ListView lv;
-    private TextView totalConsumptionTV;
     private ListView listView;
     private HabitatAdapter adapter;
     private List<Habitat> habitatList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflater pour la vue du fragment
+
         View view = inflater.inflate(R.layout.fragment_habitat_list, container, false);
 
-        // Initialisation des vues
+
         listView = view.findViewById(R.id.listView);
         habitatList = new ArrayList<>();
         adapter = new HabitatAdapter(getActivity(), R.layout.item_habitat, habitatList);
@@ -80,7 +68,6 @@ public class HabitatListFragment extends Fragment {
                             String firstname = jsonHabitat.getString("firstname");
                             String lastname = jsonHabitat.getString("lastname");
 
-                            // Combine prénom et nom pour le nom du résident
                             String residentName = firstname + " " + lastname;
 
                             List<Appliance> appliances = new ArrayList<>();

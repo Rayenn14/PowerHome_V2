@@ -5,13 +5,11 @@
     android:layout_height="match_parent"
     android:background="@color/vert_eau">
 
-    <!-- Contenu principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Toolbar pour remplacer l'ActionBar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -19,14 +17,12 @@
             android:background="@color/vert_eau"
             android:elevation="4dp" />
 
-        <!-- Contenu de l'activité principale -->
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
 
-    <!-- Menu latéral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="250dp"
@@ -35,5 +31,4 @@
         android:background="@color/blanc_fond"
         app:menu="@menu/menu_navigation"
         app:headerLayout="@layout/nav_header"/>
-
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenu principal de l'activité -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/vert_eau">
 
-        <!-- En-tête -->
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
@@ -40,7 +38,6 @@
                 android:textColor="@color/noir"/>
         </LinearLayout>
 
-        <!-- Conteneur de la liste -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_marginLeft="50dp"
@@ -62,7 +59,6 @@
 
     </RelativeLayout>
 
-    <!-- Menu latéral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="250dp"

@@ -8,12 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         TextView goBackToSignIn = findViewById(R.id.Seconnecterclick);
         goBackToSignIn.setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterActivity.this, SigninActivity.class);
+            Intent intent = new Intent(RegisterActivity.this, ValidationActivity.class);
             startActivity(intent);
         });
 
@@ -74,16 +71,13 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onCompleted(Exception e, String result) {
                         progressDialog.dismiss();
-
                         if (e != null) {
                             Toast.makeText(RegisterActivity.this, "Erreur de connexion", Toast.LENGTH_SHORT).show();
                             Log.e("SignupError", e.getMessage());
                             return;
                         }
-
                         try {
                             JSONObject response = new JSONObject(result);
-
                             if (response.has("token")) {
                                 String token = response.getString("token");
 
@@ -93,8 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         .edit()
                                         .putString("user_token", token)
                                         .apply();
-
-                                Intent intent = new Intent(RegisterActivity.this, HabitatListFragment.class);
+                                Intent intent = new Intent(RegisterActivity.this, ValidationActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {

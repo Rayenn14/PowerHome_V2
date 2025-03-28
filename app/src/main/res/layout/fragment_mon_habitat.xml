@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="730dp"
         android:background="@color/vert_eau">
 
-        <!-- En-tête -->
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="360dp"
@@ -38,7 +34,6 @@
                 android:textColor="@color/noir"/>
         </LinearLayout>
 
-        <!-- Conteneur de la liste transformé en RelativeLayout -->
         <RelativeLayout
             android:layout_width="360dp"
             android:layout_height="550dp"
@@ -55,7 +50,6 @@
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="0.5dp"/>
 
-            <!-- Bouton Ajouter positionné en bas à droite -->
             <ImageButton
                 android:id="@+id/btn_add_appliance"
                 android:layout_width="50dp"
@@ -70,7 +64,6 @@
                 android:layout_margin="10dp"/>
         </RelativeLayout>
 
-
         <TextView
             android:id="@+id/total_consumption"
             android:layout_width="360dp"
@@ -82,9 +75,6 @@
             android:background="@color/blanc_fond"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="710dp"/>
-
-
-
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

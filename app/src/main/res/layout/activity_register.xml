@@ -5,10 +5,6 @@
     android:background="@color/blanc_fond"
     android:id="@+id/register">
 
-
-
-
-
     <View
         android:layout_width="500dp"
         android:layout_height="350dp"
@@ -37,7 +33,6 @@
         android:layout_marginLeft="55dp"
         android:layout_marginTop="45dp"/>
 
-
     <View
         android:layout_width="400dp"
         android:layout_height="350dp"
@@ -65,7 +60,6 @@
         android:layout_marginTop="676dp"
         android:layout_marginLeft="298dp"
         android:id="@+id/Seconnecterclick"/>
-
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -145,8 +139,6 @@
             android:hint="Mot de passe"
             android:textColor="@color/noir" />
 
-
-
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -174,7 +166,5 @@
             android:layout_marginLeft="70dp"/>
 
     </RelativeLayout>
-
-
 
 </RelativeLayout>

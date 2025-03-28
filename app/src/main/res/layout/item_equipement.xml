@@ -10,14 +10,12 @@
     android:radius="15dp"
     android:shadowColor="#BDBDBD">
 
-    <!-- Conteneur principal pour l'équipement -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
-        <!-- Icône de l'équipement -->
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -75,5 +73,4 @@
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

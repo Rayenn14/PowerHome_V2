@@ -35,27 +35,14 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         View headerView = navigationView.getHeaderView(0);
-        // Récupérer les éléments du header
         TextView nomResident = headerView.findViewById(R.id.nomResident);
 
-        // Charger les données depuis SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         String nom = sharedPreferences.getString("user_nom", "Nom inconnu");
         String prenom = sharedPreferences.getString("user_prenom", "Prénom inconnu");
 
-        // Afficher le nom et prénom dynamiquement
         nomResident.setText(prenom + " " + nom);
 
-        // Configuration du bouton hamburger
-        toggle = new ActionBarDrawerToggle(
-                this,
-                drawerLayout,
-                toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
-        );
-
-        // Configuration du bouton hamburger
         toggle = new ActionBarDrawerToggle(
                 this,
                 drawerLayout,
@@ -63,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 R.string.navigation_drawer_close
         );
 
-        // Ajouter ces lignes pour la synchronisation
+        // pour la synchronisation
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -95,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        // Charge le fragment par défaut au démarrage
         if (savedInstanceState == null) {
             loadFragment(new HabitatListFragment());
         }
@@ -106,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, fragment);
-        transaction.addToBackStack(null); // Ajoute le fragment à la pile pour pouvoir revenir en arrière
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -117,5 +102,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

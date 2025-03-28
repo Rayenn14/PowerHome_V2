@@ -24,6 +24,9 @@ public class ValidationActivity extends AppCompatActivity {
 
         btnValider.setOnClickListener(v -> {
             Intent intent = new Intent(ValidationActivity.this, SigninActivity.class);
+            startActivity(intent);
+            finish();
         });
+
     }
 }

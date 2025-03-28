@@ -33,20 +33,14 @@ public class HabitatAdapter extends ArrayAdapter<Habitat> {
         }
 
         Habitat habitat = items.get(position);
-
         TextView nameTV = layout.findViewById(R.id.nom);
         TextView numTV = layout.findViewById(R.id.num);
         TextView etageTV = layout.findViewById(R.id.etage);
-
-
         LinearLayout iconContainer = layout.findViewById(R.id.icon_container);
         iconContainer.removeAllViews();
-
         nameTV.setText(habitat.getResidentName());
         numTV.setText(habitat.nbAppliance() + " appareils");
         etageTV.setText(String.valueOf(habitat.getFloor()));
-
-
 
         for (Appliance appliance : habitat.getAppliances()) {
             String NomAppliance = appliance.name.toLowerCase();
@@ -80,6 +74,4 @@ public class HabitatAdapter extends ArrayAdapter<Habitat> {
 
         iconContainer.addView(icon);
     }
-
-
 }

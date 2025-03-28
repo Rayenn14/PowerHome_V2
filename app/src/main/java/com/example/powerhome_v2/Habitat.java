@@ -17,10 +17,6 @@ public class Habitat {
         this.appliances = appliances;
     }
 
-    public double getArea() {
-        return area;
-    }
-
     public int getFloor() {
         return floor;
     }
@@ -35,10 +31,6 @@ public class Habitat {
 
     public String getResidentName() {
         return residentName;
-    }
-
-    public void AddAppliance(Appliance a){
-        appliances.add(a);
     }
 
     public int nbAppliance(){
