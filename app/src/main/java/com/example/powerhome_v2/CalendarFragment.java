@@ -30,12 +30,10 @@ import java.util.List;
 public class CalendarFragment extends Fragment {
     private LinearLayout minuitToSix, sixToMidi, midiToDixHuit, dixHuitToVingt;
     private Button btnAddReservation;
-
     private TextView maxWattageMinuitToSix, pourcentageMinuitToSix;
     private TextView maxWattageSixToMidi, pourcentageSixToMidi;
     private TextView maxWattageMidiToDixHuit, pourcentageMidiToDixHuit;
     private TextView maxWattageDixHuitToVingt, pourcentageDixHuitToVingt;
-
     private int currentConsumptionMinuitToSix;
     private int maxWattageMinuitToSixValue;
 
@@ -345,19 +343,32 @@ public class CalendarFragment extends Fragment {
                 .asString()
                 .setCallback((e, result) -> {
                     try {
-                        // Nettoyer la réponse des éventuels caractères parasites
                         String cleanResult = result.replaceAll("<[^>]*>", "").trim();
                         JSONObject jsonResponse = new JSONObject(cleanResult);
 
                         if (jsonResponse.getString("status").equals("success")) {
-                            // Mettre à jour l'UI
                             loadConsumptionData();
                         } else {
-                            // Gérer l'erreur
+                            // Ajoutez ici la gestion spécifique des erreurs
+                            String errorMessage = jsonResponse.optString("message", "Erreur inconnue");
+
+                            if (errorMessage.toLowerCase().contains("déjà réservé") ||
+                                    errorMessage.toLowerCase().contains("duplicate entry")) {
+                                Toast.makeText(getActivity(),
+                                        "Cet appareil est déjà réservé pour ce créneau",
+                                        Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getActivity(),
+                                        "Erreur: " + errorMessage,
+                                        Toast.LENGTH_LONG).show();
+                            }
                         }
                     } catch (Exception ex) {
                         Log.e("JSON Parse", "Raw response: " + result);
                         ex.printStackTrace();
+                        Toast.makeText(getActivity(),
+                                "Erreur de traitement de la réponse",
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
     }
