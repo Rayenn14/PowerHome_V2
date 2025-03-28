@@ -53,7 +53,7 @@ public class CalendarFragment extends Fragment {
                     Log.d("API Response", result);
 
                     try {
-                        // Parse the response as a JSONArray instead of JSONObject
+                        // Parse the response as a JSONArray
                         JSONArray jsonArray = new JSONArray(result);
                         updateUI(jsonArray);
                     } catch (JSONException jsonException) {
@@ -65,22 +65,31 @@ public class CalendarFragment extends Fragment {
 
     private void updateUI(JSONArray jsonArray) {
         try {
-            // Parcours du tableau JSON pour récupérer la consommation pour chaque créneau horaire
+            // Assurer que le JSON contient les informations nécessaires pour chaque créneau horaire
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                String begin = jsonObject.getString("begin");
-                String end = jsonObject.getString("end");
-                int totalConsumption = jsonObject.getInt("total_consumption");
+                JSONObject timeSlot = jsonArray.getJSONObject(i);
 
-                // Associer les créneaux horaires à leurs vues respectives
-                if (begin.equals("2025-06-25 00:00:00") && end.equals("2025-06-25 05:59:00")) {
-                    setColor(minuitToSix, totalConsumption);
-                } else if (begin.equals("2025-06-25 06:00:00") && end.equals("2025-06-25 11:59:00")) {
-                    setColor(sixToMidi, totalConsumption);
-                } else if (begin.equals("2025-06-25 12:00:00") && end.equals("2025-06-25 17:59:00")) {
-                    setColor(midiToDixHuit, totalConsumption);
-                } else if (begin.equals("2025-06-25 18:00:00") && end.equals("2025-06-25 23:59:00")) {
-                    setColor(dixHuitToVingt, totalConsumption);
+                // Récupérer les informations sur les consommations et les max_wattage
+                String timeSlotLabel = timeSlot.getString("begin") + "-" + timeSlot.getString("end");
+
+                // Convertir max_wattage et total_consumption en entiers
+                int consumption = Integer.parseInt(timeSlot.getString("total_consumption"));
+                int maxWattage = Integer.parseInt(timeSlot.getString("max_wattage"));
+
+                // Déterminer quel créneau horaire mettre à jour
+                switch (timeSlotLabel) {
+                    case "2025-06-25 00:00:00-2025-06-25 05:59:00":
+                        setColor(minuitToSix, consumption, maxWattage);
+                        break;
+                    case "2025-06-25 06:00:00-2025-06-25 11:59:00":
+                        setColor(sixToMidi, consumption, maxWattage);
+                        break;
+                    case "2025-06-25 12:00:00-2025-06-25 17:59:00":
+                        setColor(midiToDixHuit, consumption, maxWattage);
+                        break;
+                    case "2025-06-25 18:00:00-2025-06-25 23:59:00":
+                        setColor(dixHuitToVingt, consumption, maxWattage);
+                        break;
                 }
             }
         } catch (JSONException e) {
@@ -88,14 +97,26 @@ public class CalendarFragment extends Fragment {
         }
     }
 
+    private void setColor(LinearLayout layout, int consumption, int maxWattage) {
+        // S'assurer que maxWattage est supérieur à 0 pour éviter une division par 0
+        if (maxWattage == 0) {
+            layout.setBackgroundColor(Color.GRAY); // Gris si max_wattage est 0
+            return;
+        }
 
-    private void setColor(LinearLayout layout, int consumption) {
-        if (consumption < 500) {
-            layout.setBackgroundColor(Color.GREEN);
-        } else if (consumption <= 1500) {
-            layout.setBackgroundColor(Color.parseColor("#FFA500"));
+        // Calculer le pourcentage de consommation par rapport au max_wattage
+        double percentage = (double) consumption / maxWattage * 100;
+
+        // Déterminer la couleur en fonction de ce pourcentage
+        if (percentage <= 30) {
+            layout.setBackgroundColor(Color.GREEN); // Vert
+        } else if (percentage <= 70) {
+            layout.setBackgroundColor(Color.parseColor("#FFA500")); // Orange
+        } else if (percentage <= 100) {
+            layout.setBackgroundColor(Color.RED); // Rouge
         } else {
-            layout.setBackgroundColor(Color.RED);
+            layout.setBackgroundColor(Color.GRAY); // Gris pour les valeurs au-delà de 100%
         }
     }
+
 }
