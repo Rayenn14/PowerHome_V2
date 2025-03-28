@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (itemId == R.id.nav_editprofile) {
                     loadFragment(new ProfilFragment());
                 }
-                else if (itemId == R.id.nav_notif) {
+                else if (itemId == R.id.nav_calendrier) {
                     loadFragment(new CalendarFragment());
                 }
                 drawerLayout.closeDrawers();

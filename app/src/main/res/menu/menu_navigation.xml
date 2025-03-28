@@ -8,8 +8,8 @@
         android:icon="@drawable/user"
         android:title="Mon habitat" />
     <item
-        android:id="@+id/nav_notif"
-        android:icon="@drawable/baseline_notifications_24"
+        android:id="@+id/nav_calendrier"
+        android:icon="@drawable/agenda"
         android:title="Calendrier" />
     <item
         android:id="@+id/nav_preferences"
@@ -17,5 +17,14 @@
         android:title="Mes préférences" />
     <item
         android:id="@+id/nav_editprofile"
+        android:icon="@drawable/profil"
         android:title="Modifier mon profil" />
+    <item
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/baseline_notifications_24"
+        android:title="Notifications" />
+    <item
+        android:id="@+id/nav_apropos"
+        android:icon="@drawable/baseline_notifications_24"
+        android:title="A propos" />
 </menu>
