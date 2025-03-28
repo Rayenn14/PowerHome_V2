@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -45,6 +46,19 @@ public class CalendarFragment extends Fragment {
 
     private int currentConsumptionDixHuitToVingt;
     private int maxWattageDixHuitToVingtValue;
+    private ImageButton jour1, jour2, jour3, jour4, jour5, jour6, jour7;
+
+    private TextView currentDateTextView;
+
+    private final String[] dates = {
+            "20 Juin 2025",
+            "21 Juin 2025",
+            "22 Juin 2025",
+            "23 Juin 2025",
+            "24 Juin 2025",
+            "25 Juin 2025",
+            "26 Juin 2025"
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -68,10 +82,34 @@ public class CalendarFragment extends Fragment {
         maxWattageDixHuitToVingt = view.findViewById(R.id.maxWattageDixHuitToVingt);
         pourcentageDixHuitToVingt = view.findViewById(R.id.pourcentageDixHuitToVingt);
 
-
         // Initialisation du bouton pour ajouter une réservation
         btnAddReservation = view.findViewById(R.id.btn_add_reservation);
         btnAddReservation.setOnClickListener(v -> showAddReservationDialog());
+
+        jour1 = view.findViewById(R.id.jour1);
+        jour2 = view.findViewById(R.id.jour2);
+        jour3 = view.findViewById(R.id.jour3);
+        jour4 = view.findViewById(R.id.jour4);
+        jour5 = view.findViewById(R.id.jour5);
+        jour6 = view.findViewById(R.id.jour6);
+        jour7 = view.findViewById(R.id.jour7);
+
+        View.OnClickListener dayClickListener = v -> {
+            updateDaySelection((ImageButton) v);
+            if (v.getId() == R.id.jour1) {
+                loadConsumptionData();
+            } else {
+                reinitialiserCases();
+            }
+        };
+
+        jour1.setOnClickListener(dayClickListener);
+        jour2.setOnClickListener(dayClickListener);
+        jour3.setOnClickListener(dayClickListener);
+        jour4.setOnClickListener(dayClickListener);
+        jour5.setOnClickListener(dayClickListener);
+        jour6.setOnClickListener(dayClickListener);
+        jour7.setOnClickListener(dayClickListener);
 
         loadConsumptionData();
 
@@ -372,5 +410,33 @@ public class CalendarFragment extends Fragment {
                     }
                 });
     }
+    public void reinitialiserCases(){
+        maxWattageMinuitToSix.setText(" ");
+        pourcentageMinuitToSix.setText(" ");
+        maxWattageSixToMidi.setText(" ");
+        pourcentageSixToMidi.setText(" ");
+        maxWattageMidiToDixHuit.setText(" ");
+        pourcentageMidiToDixHuit.setText(" ");
+        maxWattageDixHuitToVingt.setText(" ");
+        pourcentageDixHuitToVingt.setText(" ");
 
+        setColor(minuitToSix, 0, 100);
+        setColor(sixToMidi, 0, 100);
+        setColor(midiToDixHuit, 0, 100);
+        setColor(dixHuitToVingt, 0, 100);
+
+    }
+
+    private void updateDaySelection(ImageButton selectedDay) {
+        int[] dayButtons = {R.id.jour1, R.id.jour2, R.id.jour3, R.id.jour4, R.id.jour5, R.id.jour6, R.id.jour7};
+
+        for (int id : dayButtons) {
+            ImageButton btn = getView().findViewById(id);
+            if (btn == selectedDay) {
+                btn.setImageResource(R.drawable.btn1);
+            } else {
+                btn.setImageResource(R.drawable.btn2);
+            }
+        }
+    }
 }
