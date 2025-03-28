@@ -8,11 +8,14 @@
         android:icon="@drawable/user"
         android:title="Mon habitat" />
     <item
-        android:id="@+id/nav_bookmark"
+        android:id="@+id/nav_notif"
         android:icon="@drawable/baseline_notifications_24"
         android:title="Mes notifications" />
     <item
-        android:id="@+id/nav_editprofile"
+        android:id="@+id/prefrences"
         android:icon="@drawable/bookmark"
         android:title="Mes préférences" />
+    <item
+        android:id="@+id/nav_editprofile"
+        android:title="Modifier mon profil" />
 </menu>

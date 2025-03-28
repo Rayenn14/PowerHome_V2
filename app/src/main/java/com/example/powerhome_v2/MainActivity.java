@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 else if (itemId == R.id.nav_user) {
                     loadFragment(new MonHabitatFragment());
                 }
+                else if (itemId == R.id.nav_editprofile) {
+                    loadFragment(new ProfilFragment());
+                }
 
                 drawerLayout.closeDrawers();
                 return true;
