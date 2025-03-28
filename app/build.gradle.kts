@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("com.koushikdutta.ion:ion:3.1.0")
     implementation(libs.ion)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

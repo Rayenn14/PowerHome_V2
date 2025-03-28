@@ -128,10 +128,29 @@
             android:background="@color/gris"
             android:orientation="horizontal">
 
+
             <View
                 android:layout_width="5dp"
                 android:layout_height="80dp"
                 android:background="@color/barre_gris"/>
+
+            <TextView
+                android:id="@+id/typeConsommation1"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:text="Consommation X"/>
+
+            <TextView
+                android:id="@+id/typePourcentage1"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-130dp"
+                android:layout_marginTop="35dp"
+                android:textStyle="bold"
+                android:text="Pourcentage"/>
         </LinearLayout>
 
         <LinearLayout
@@ -146,6 +165,24 @@
                 android:layout_width="5dp"
                 android:layout_height="80dp"
                 android:background="@color/barre_gris"/>
+
+            <TextView
+                android:id="@+id/typeConsommation2"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:text="Consommation X"/>
+
+            <TextView
+                android:id="@+id/typePourcentage2"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-130dp"
+                android:layout_marginTop="35dp"
+                android:textStyle="bold"
+                android:text="Pourcentage"/>
         </LinearLayout>
 
         <LinearLayout
@@ -160,6 +197,24 @@
                 android:layout_width="5dp"
                 android:layout_height="80dp"
                 android:background="@color/barre_gris"/>
+
+            <TextView
+                android:id="@+id/typeConsommation3"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:text="Consommation X"/>
+
+            <TextView
+                android:id="@+id/typePourcentage3"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-130dp"
+                android:layout_marginTop="35dp"
+                android:textStyle="bold"
+                android:text="Pourcentage"/>
         </LinearLayout>
 
         <LinearLayout
@@ -174,6 +229,24 @@
                 android:layout_width="5dp"
                 android:layout_height="80dp"
                 android:background="@color/barre_gris"/>
+            <TextView
+                android:id="@+id/typeConsommation4"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:text="Consommation X"/>
+
+            <TextView
+                android:id="@+id/typePourcentage4"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-130dp"
+                android:layout_marginTop="35dp"
+                android:textStyle="bold"
+                android:text="Pourcentage"/>
+
         </LinearLayout>
 
     </LinearLayout>
