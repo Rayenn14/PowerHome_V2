@@ -12,7 +12,7 @@
         android:icon="@drawable/baseline_notifications_24"
         android:title="Mes notifications" />
     <item
-        android:id="@+id/prefrences"
+        android:id="@+id/nav_preferences"
         android:icon="@drawable/bookmark"
         android:title="Mes préférences" />
     <item

@@ -13,7 +13,5 @@ public class Mer1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mer1);
 
-//        faire les raccords ajouterEquipement et ajouter Reservation quand les xml dispo
-
     }
 }
