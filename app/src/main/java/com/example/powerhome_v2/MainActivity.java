@@ -1,6 +1,7 @@
 package com.example.powerhome_v2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                 else if (itemId == R.id.nav_calendrier) {
                     loadFragment(new CalendarFragment());
                 }
+                else if (itemId == R.id.nav_deconnect) {
+                    deconnecterUtilisateur();
+                }
                 drawerLayout.closeDrawers();
                 return true;
             }
@@ -101,5 +105,18 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void deconnecterUtilisateur() {
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        // Redirige vers l'écran de connexion
+        Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Efface l'historique pour éviter le retour
+        startActivity(intent);
+        finish();
     }
 }
