@@ -27,4 +27,8 @@
         android:id="@+id/nav_apropos"
         android:icon="@drawable/baseline_notifications_24"
         android:title="A propos" />
+    <item
+        android:id="@+id/nav_deconnect"
+        android:icon="@drawable/baseline_notifications_24"
+        android:title="Déconnexion" />
 </menu>
