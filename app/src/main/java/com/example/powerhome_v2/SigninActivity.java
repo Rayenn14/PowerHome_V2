@@ -54,7 +54,7 @@ public class SigninActivity extends AppCompatActivity {
         progressDialog.show();
 
         // URL du serveur (Service WEB), NE PAS OUBLIER DE METTRE SON IP ! Important
-        String url = "http://192.168.1.18/PowerHome/login.php?email=" + email + "&password=" + password;
+        String url = "http://192.168.1.80/PowerHome/login.php?email=" + email + "&password=" + password;
 
         Ion.with(this)
                 .load(url)

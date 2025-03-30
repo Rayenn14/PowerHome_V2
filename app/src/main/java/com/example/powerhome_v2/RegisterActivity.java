@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.show();
 
-        String url = "http://192.168.1.18/PowerHome/signup.php?"
+        String url = "http://192.168.1.80/PowerHome/signup.php?"
                 + "firstname=" + firstname + "&lastname=" + lastname
                 + "&email=" + email + "&password=" + password
                 + "&floor=" + floor + "&area=" + area;

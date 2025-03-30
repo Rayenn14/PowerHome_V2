@@ -44,7 +44,7 @@ public class HabitatListFragment extends Fragment {
     private void loadHabitatData() {
         SharedPreferences prefs = getActivity().getSharedPreferences("UserPrefs", getActivity().MODE_PRIVATE);
         String token = prefs.getString("user_token", null);
-        String URL = "http://192.168.1.18/PowerHome/getHabitats_v2.php?token=" + token;
+        String URL = "http://192.168.1.80/PowerHome/getHabitats_v2.php?token=" + token;
 
         Ion.with(getActivity())
                 .load(URL)

@@ -61,7 +61,7 @@ public class MonHabitatFragment extends Fragment {
         progressDialog.setCancelable(false);
         progressDialog.show();
 
-        String url = "http://192.168.1.18/PowerHome/getAppliancesByUser.php?token=" + token;
+        String url = "http://192.168.1.80/PowerHome/getAppliancesByUser.php?token=" + token;
 
         Ion.with(getActivity())
                 .load(url)
@@ -138,7 +138,7 @@ public class MonHabitatFragment extends Fragment {
     }
 
     private void addAppliance(String name, String reference, String wattage, String token) {
-        String url = "http://192.168.1.18/PowerHome/addAppliance.php";
+        String url = "http://192.168.1.80/PowerHome/addAppliance.php";
         Ion.with(getActivity())
                 .load("POST", url)
                 .setBodyParameter("name", name)

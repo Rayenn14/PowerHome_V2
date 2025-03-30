@@ -17,7 +17,7 @@
         android:title="Mes préférences" />
     <item
         android:id="@+id/nav_editprofile"
-        android:icon="@drawable/editprofil"
+        android:icon="@drawable/profil"
         android:title="Modifier mon profil" />
     <item
         android:id="@+id/nav_notification"
@@ -25,10 +25,10 @@
         android:title="Notifications" />
     <item
         android:id="@+id/nav_apropos"
-        android:icon="@drawable/about"
+        android:icon="@drawable/apropos"
         android:title="A propos" />
     <item
         android:id="@+id/nav_deconnect"
-        android:icon="@drawable/logout"
+        android:icon="@drawable/deconnect"
         android:title="Déconnexion" />
 </menu>

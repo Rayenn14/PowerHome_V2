@@ -130,7 +130,7 @@ public class CalendarFragment extends Fragment {
     private void loadConsumptionData() {
         SharedPreferences prefs = getActivity().getSharedPreferences("UserPrefs", getActivity().MODE_PRIVATE);
         String token = prefs.getString("user_token", null);
-        String URL = "http://192.168.1.18/PowerHome/getConsumption.php?token=" + token;
+        String URL = "http://192.168.1.80/PowerHome/getConsumption.php?token=" + token;
 
         Ion.with(getActivity())
                 .load(URL)
@@ -328,7 +328,7 @@ public class CalendarFragment extends Fragment {
     }
 
     private void fetchUserAppliances(String token, final Spinner applianceSpinner, final ArrayAdapter<String> applianceAdapter) {
-        String url = "http://192.168.1.18/PowerHome/getAppliancesByUser.php?token=" + token;
+        String url = "http://192.168.1.80/PowerHome/getAppliancesByUser.php?token=" + token;
 
         Ion.with(getActivity())
                 .load(url)
@@ -366,7 +366,7 @@ public class CalendarFragment extends Fragment {
                 });
     }
     private void addReservationToDatabase(String token, int applianceId, int timeSlotValue) {
-        String url = "http://192.168.1.18/PowerHome/add_appliance_to_timeslot.php" + "?token=" + token + "&appliance_id=" + applianceId + "&time_slot=" + timeSlotValue;
+        String url = "http://192.168.1.80/PowerHome/add_appliance_to_timeslot.php" + "?token=" + token + "&appliance_id=" + applianceId + "&time_slot=" + timeSlotValue;
         Ion.with(getActivity())
                 .load(url)
                 .asString()
