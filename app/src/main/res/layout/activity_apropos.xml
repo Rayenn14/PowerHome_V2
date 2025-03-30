@@ -4,149 +4,100 @@
     android:layout_height="match_parent">
 
 
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:src="@drawable/apropos"
-        android:scaleType="fitCenter"
-        android:background="@color/vert_eau"/>
-    <RelativeLayout
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:background="#ABBCCE"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="15dp"
-        android:id="@+id/aPropos">
+    <View
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:background="@drawable/circle"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="400dp"
+        android:translationY="240dp"/>
 
+    <View
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:background="@drawable/circle"
+        android:layout_gravity="left"
+        android:translationX="-230dp"
+        android:translationY="580dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#96B1AE">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:text="A PROPOS"
+            android:textColor="#141414"
+            android:paddingStart="50dp"
+            android:paddingTop="15dp"/>
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="65dp"
+        android:layout_width="90dp"
         android:layout_height="1dp"
         android:background="@color/noir"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="20dp">
     </LinearLayout>
 
     <TextView
-        android:layout_width="70dp"
-        android:layout_height="20dp"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
         android:text="Membres : "
-        android:layout_marginLeft="5dp"
-        android:textStyle="italic"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="120dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#1F1E1E"
+        android:layout_marginLeft="20dp"/>
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="130dp"
+        android:src="@drawable/man"/>
 
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="80dp"
-        android:text="Rayen BOUZIDI, Danya BELMOKHTAR, Iris NJIKAM"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="Rayen BOUZIDI"
         android:textStyle="bold"
-        android:textAlignment="textStart"
-        />
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="145dp"/>
 
-        <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="1dp"
-            android:background="@color/noir"
-            android:layout_marginTop="73dp"
-            android:layout_marginLeft="5dp">
-        </LinearLayout>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="215dp"
+        android:src="@drawable/woman"/>
 
-        <TextView
-            android:layout_width="95dp"
-            android:layout_height="20dp"
-            android:text="Nom du projet : "
-            android:layout_marginLeft="5dp"
-            android:textStyle="italic"
-            android:layout_marginTop="55dp"/>
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:text="Danya BELMOKHTAR"
+        android:textStyle="bold"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="230dp"/>
 
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="300dp"
+        android:src="@drawable/woman"/>
 
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="55dp"
-            android:text="POWERHOME"
-            android:textStyle="bold" />
-
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="1dp"
-            android:background="@color/noir"
-            android:layout_marginTop="102dp"
-            android:layout_marginLeft="5dp">
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="20dp"
-            android:text="Groupe : "
-            android:layout_marginLeft="5dp"
-            android:textStyle="italic"
-            android:layout_marginTop="85dp"/>
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="75dp"
-            android:layout_marginTop="85dp"
-            android:text="205/206"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="1dp"
-            android:background="@color/noir"
-            android:layout_marginTop="132dp"
-            android:layout_marginLeft="5dp">
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:text="Version : "
-            android:layout_marginLeft="5dp"
-            android:textStyle="italic"
-            android:layout_marginTop="115dp"/>
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="115dp"
-            android:text="Version 2"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="1dp"
-            android:background="@color/noir"
-            android:layout_marginTop="170dp"
-            android:layout_marginLeft="5dp">
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:text="IDE : "
-            android:layout_marginLeft="5dp"
-            android:textStyle="italic"
-            android:layout_marginTop="150dp"/>
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="150dp"
-            android:text="Android Studio"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="Iris NJIKAM"
+        android:textStyle="bold"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="320dp"/>
 </RelativeLayout>
