@@ -2,6 +2,7 @@ package com.example.powerhome_v2;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,9 @@ public class HabitatListFragment extends Fragment {
                         Toast.makeText(getActivity(), "Erreur de connexion", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    System.out.println("JSON reçu: " + result);
+
+                    Log.d("API_RESPONSE", "Réponse reçue: " + result);
+
 
                     try {
                         JSONArray jsonArray = new JSONArray(result);
