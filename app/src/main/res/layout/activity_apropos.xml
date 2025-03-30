@@ -81,7 +81,7 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="65dp"
             android:layout_height="20dp"
             android:text="Groupe : "
             android:layout_marginLeft="5dp"
@@ -92,7 +92,7 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="75dp"
             android:layout_marginTop="85dp"
             android:text="205/206"
             android:textStyle="bold" />
@@ -106,7 +106,7 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="70dp"
             android:layout_height="20dp"
             android:text="Version : "
             android:layout_marginLeft="5dp"
@@ -117,7 +117,7 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="65dp"
             android:layout_marginTop="115dp"
             android:text="Version 2"
             android:textStyle="bold" />
@@ -131,7 +131,7 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="40dp"
             android:layout_height="20dp"
             android:text="IDE : "
             android:layout_marginLeft="5dp"
@@ -142,7 +142,7 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="150dp"
             android:text="Android Studio"
             android:textStyle="bold" />
