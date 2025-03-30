@@ -74,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (itemId == R.id.nav_editprofile) {
                     loadFragment(new ProfilFragment());
-                }
-                else if (itemId == R.id.nav_calendrier) {
+                } else if (itemId == R.id.nav_apropos) {
+                    loadFragment(new AProposFragment());
+                } else if (itemId == R.id.nav_calendrier) {
                     loadFragment(new CalendarFragment());
                 }
                 else if (itemId == R.id.nav_deconnect) {
